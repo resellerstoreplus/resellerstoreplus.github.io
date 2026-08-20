@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="RspTrading Community - Digital Trading Community">
+
+    <title>RspTrading Community</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <nav class="navbar container">
+
+        <a href="#home" class="logo">
+            <span class="logo-mark">
+            <img src="assets/logo.jpg" alt="RspTrading Logo">
+            </span>
+            <span>Rsp<span>Trading</span></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#home" data-i18n="home">Home</a>
+
+            <a href="#market" data-i18n="market">
+                Marketplace
+            </a>
+
+            <a href="#escrow" data-i18n="escrow">
+                Escrow
+            </a>
+
+            <a href="#rules" data-i18n="rules">
+                Rules
+            </a>
+
+            <a href="#community" data-i18n="community">
+                Community
+            </a>
+
+            <div class="mobile-language">
+
+                <select id="mobileLanguage">
+
+                    <option value="en">
+                        🇬🇧 English
+                    </option>
+
+                    <option value="bn">
+                        🇧🇩 বাংলা
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <select class="language-select" id="languageSelect">
+
+            <option value="en">
+                🇬🇧 English
+            </option>
+
+            <option value="bn">
+                🇧🇩 বাংলা
+            </option>
+
+        </select>
+
+        <a href="#community"
+           class="nav-button"
+           data-i18n="join">
+
+            Join Community
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+
+                <span></span>
+
+                <span data-i18n="eyebrow">
+                    Trusted Digital Trading Community
+                </span>
+
+            </div>
+
+
+            <h1>
+
+                <span data-i18n="hero1">
+                    Trade smarter.
+                </span>
+
+                <br>
+
+                <strong data-i18n="hero2">
+                    Trade with confidence.
+                </strong>
+
+            </h1>
+
+
+            <p data-i18n="heroText">
+
+                RspTrading Community is a marketplace-focused
+                community for buying, selling and trading digital
+                accounts and online assets with a safer transaction
+                experience.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a href="#market"
+                   class="btn btn-primary"
+                   data-i18n="exploreMarket">
+
+                    Explore Marketplace →
+
+                </a>
+
+
+                <a href="#escrow"
+                   class="btn btn-secondary"
+                   data-i18n="learnEscrow">
+
+                    Learn About Escrow
+
+                </a>
+
+            </div>
+
+
+            <div class="trust-row">
+
+                <div>
+
+                    <b>01</b>
+
+                    <span data-i18n="trust1">
+                        Community<br>
+                        Driven
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b>02</b>
+
+                    <span data-i18n="trust2">
+                        Escrow<br>
+                        Support
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b>03</b>
+
+                    <span data-i18n="trust3">
+                        Clear Trading<br>
+                        Rules
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-card-wrap">
+
+            <div class="hero-card">
+
+                <div class="card-top">
+
+                    <span class="live">
+
+                        <i></i>
+
+                        <span data-i18n="communityLive">
+                            COMMUNITY LIVE
+                        </span>
+
+                    </span>
+
+                    <span class="dots">
+                        •••
+                    </span>
+
+                </div>
+
+
+                <div class="balance-label"
+                     data-i18n="activeMarket">
+
+                    ACTIVE MARKET
+
+                </div>
+
+
+                <div class="market-number">
+
+                    <span id="counter">
+                        1,284
+                    </span>
+
+                    <small data-i18n="listings">
+                        + listings
+                    </small>
+
+                </div>
+
+
+                <div class="chart">
+
+                    <svg viewBox="0 0 500 180"
+                         preserveAspectRatio="none">
+
+                        <defs>
+
+                            <linearGradient id="area"
+                                x1="0"
+                                x2="0"
+                                y1="0"
+                                y2="1">
+
+                                <stop offset="0%"
+                                    stop-color="#8b5cf6"
+                                    stop-opacity=".35"/>
+
+                                <stop offset="100%"
+                                    stop-color="#8b5cf6"
+                                    stop-opacity="0"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+
+                        <path class="area"
+                            d="M0,155
+                            C55,145 58,120 105,130
+                            C145,139 151,82 200,100
+                            C245,117 265,48 305,70
+                            C344,92 365,45 405,53
+                            C443,61 455,24 500,32
+                            L500,180 L0,180 Z"/>
+
+
+                        <path class="line"
+                            d="M0,155
+                            C55,145 58,120 105,130
+                            C145,139 151,82 200,100
+                            C245,117 265,48 305,70
+                            C344,92 365,45 405,53
+                            C443,61 455,24 500,32"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="card-stats">
+
+                    <div>
+
+                        <span data-i18n="buyers">
+                            Buyers
+                        </span>
+
+                        <b>
+                            2.8K+
+                        </b>
+
+                    </div>
+
+
+                    <div>
+
+                        <span data-i18n="sellers">
+                            Sellers
+                        </span>
+
+                        <b>
+                            1.4K+
+                        </b>
+
+                    </div>
+
+
+                    <div>
+
+                        <span data-i18n="trades">
+                            Trades
+                        </span>
+
+                        <b>
+                            8.6K+
+                        </b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-badge badge-a">
+
+                ✓
+
+                <span data-i18n="verified">
+                    Verified Trade
+                </span>
+
+            </div>
+
+
+            <div class="floating-badge badge-b">
+
+                🛡
+
+                <span data-i18n="protected">
+                    Escrow Protected
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MARKETPLACE ================= -->
+
+<section class="section" id="market">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="eyebrow">
+
+                    <span></span>
+
+                    <span data-i18n="marketEyebrow">
+                        Marketplace
+                    </span>
+
+                </div>
+
+
+                <h2 data-i18n="marketTitle">
+                    What can you trade?
+                </h2>
+
+            </div>
+
+
+            <p data-i18n="marketText">
+
+                Explore popular categories within the
+                RspTrading Community.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+            <article class="category-card">
+
+                <div class="icon">
+                    ◎
+                </div>
+
+                <h3 data-i18n="socialTitle">
+                    Social Accounts
+                </h3>
+
+                <p data-i18n="socialText">
+                    Social media accounts and digital profiles.
+                </p>
+
+                <span data-i18n="explore">
+                    Explore →
+                </span>
+
+            </article>
+
+
+
+            <article class="category-card">
+
+                <div class="icon">
+                    ✉
+                </div>
+
+                <h3 data-i18n="emailTitle">
+                    Email Accounts
+                </h3>
+
+                <p data-i18n="emailText">
+                    Established email accounts and related assets.
+                </p>
+
+                <span data-i18n="explore">
+                    Explore →
+                </span>
+
+            </article>
+
+
+
+            <article class="category-card">
+
+                <div class="icon">
+                    ◈
+                </div>
+
+                <h3 data-i18n="assetTitle">
+                    Digital Assets
+                </h3>
+
+                <p data-i18n="assetText">
+                    Other online assets offered by community sellers.
+                </p>
+
+                <span data-i18n="explore">
+                    Explore →
+                </span>
+
+            </article>
+
+
+
+            <article class="category-card">
+
+                <div class="icon">
+                    ↗
+                </div>
+
+                <h3 data-i18n="customTitle">
+                    Custom Deals
+                </h3>
+
+                <p data-i18n="customText">
+                    Connect with buyers and sellers for private deals.
+                </p>
+
+                <span data-i18n="explore">
+                    Explore →
+                </span>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ESCROW ================= -->
+
+<section class="escrow-section" id="escrow">
+
+    <div class="container escrow-grid">
+
+        <div>
+
+            <div class="eyebrow">
+
+                <span></span>
+
+                <span data-i18n="escrowEyebrow">
+                    RspTrading Escrow
+                </span>
+
+            </div>
+
+
+            <h2 data-i18n="escrowTitle">
+                A safer way to complete a trade.
+            </h2>
+
+
+            <p data-i18n="escrowText">
+
+                Buyer and seller can inspect the account or
+                digital asset, discuss the price and complete
+                the transaction through the RspTrading Escrow service.
+
+            </p>
+
+
+            <a href="#rules"
+               class="btn btn-primary"
+               data-i18n="howWorks">
+
+                How It Works →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <b>01</b>
+
+                <div>
+
+                    <h3 data-i18n="step1Title">
+                        Discuss & Verify
+                    </h3>
+
+                    <p data-i18n="step1Text">
+                        Buyer and seller inspect the asset
+                        and agree on the price.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <b>02</b>
+
+                <div>
+
+                    <h3 data-i18n="step2Title">
+                        Use Escrow
+                    </h3>
+
+                    <p data-i18n="step2Text">
+                        The transaction is initiated through
+                        the RspTrading Escrow process.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <b>03</b>
+
+                <div>
+
+                    <h3 data-i18n="step3Title">
+                        Complete Trade
+                    </h3>
+
+                    <p data-i18n="step3Text">
+                        After the agreed conditions are fulfilled,
+                        the trade is completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= RULES ================= -->
+
+<section class="section" id="rules">
+
+    <div class="container">
+
+        <div class="section-head centered">
+
+            <div>
+
+                <div class="eyebrow">
+
+                    <span></span>
+
+                    <span data-i18n="rulesEyebrow">
+                        Safety First
+                    </span>
+
+                </div>
+
+
+                <h2 data-i18n="rulesTitle">
+                    Trade by the rules.
+                </h2>
+
+            </div>
+
+
+            <p data-i18n="rulesText">
+
+                Simple rules help keep the community
+                safer for everyone.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="rules-grid">
+
+
+            <div class="rule">
+
+                <span>01</span>
+
+                <h3 data-i18n="rule1Title">
+                    Verify Before Paying
+                </h3>
+
+                <p data-i18n="rule1Text">
+
+                    Always review the account or asset carefully
+                    before agreeing to a deal.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="rule">
+
+                <span>02</span>
+
+                <h3 data-i18n="rule2Title">
+                    Use RspTrading Escrow
+                </h3>
+
+                <p data-i18n="rule2Text">
+
+                    For supported trades, use our escrow process
+                    instead of sending funds directly.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="rule warning">
+
+                <span>03</span>
+
+                <h3 data-i18n="rule3Title">
+                    Avoid Off-Platform Deals
+                </h3>
+
+                <p data-i18n="rule3Text">
+
+                    Transactions completed outside the RspTrading
+                    Escrow service are at the parties' own risk.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="notice">
+
+            <strong data-i18n="important">
+                ⚠ Important:
+            </strong>
+
+            <span data-i18n="notice">
+
+                If a buyer or seller chooses to complete a transaction
+                outside the RspTrading Escrow service and is scammed,
+                RspTrading is not responsible for that transaction.
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= COMMUNITY ================= -->
+
+<section class="community-section" id="community">
+
+    <div class="container community-box">
+
+        <div>
+
+            <div class="eyebrow">
+
+                <span></span>
+
+                <span data-i18n="communityEyebrow">
+                    RspTrading Community
+                </span>
+
+            </div>
+
+
+            <h2 data-i18n="communityTitle">
+                Join the community.
+            </h2>
+
+
+            <p data-i18n="communityText">
+
+                Meet buyers, sellers and traders,
+                discover new offers and stay updated.
+
+            </p>
+
+        </div>
+
+
+        <a href="https://t.me/RspTradingHQ"
+           target="_blank"
+           class="btn btn-light"
+           data-i18n="telegram">
+
+            Join on Telegram ↗
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-main">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                <span class="logo-mark">
+                <img src="assets/logo.jpg" alt="RspTrading Logo">
+                </span>
+                <span>
+                    Rsp<span>Trading Community</span>
+                </span>
+
+            </a>
+
+            <p data-i18n="footerText">
+                Digital trading, powered by community.
+            </p>
+
+        </div>
+
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="footer-column">
+
+            <h4 data-i18n="footerSocial">
+                Social Media
+            </h4>
+
+
+            <a href="#"
+               data-i18n="buyFacebook">
+                Buy Facebook Accounts
+            </a>
+
+
+            <a href="#"
+               data-i18n="buyYoutube">
+                Buy YouTube Channels
+            </a>
+
+
+            <a href="#"
+               data-i18n="buyTiktok">
+                Buy TikTok Accounts
+            </a>
+
+
+            <a href="#"
+               data-i18n="buyTwitter">
+                Buy X / Twitter Accounts
+            </a>
+
+
+            <a href="#"
+               data-i18n="buyInstagram">
+                Buy Instagram Accounts
+            </a>
+
+
+            <a href="#"
+               data-i18n="buyBusiness">
+                Buy Online Businesses
+            </a>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="footer-column">
+
+            <h4 data-i18n="footerServices">
+                Our Services
+            </h4>
+
+
+            <a href="page/escrow.html"
+               data-i18n="footerEscrow">
+                Escrow Service
+            </a>
+
+
+            <a href="#"
+               data-i18n="recentlySold">
+                Recently Sold
+            </a>
+
+
+            <a href="#community"
+               data-i18n="footerCommunity">
+                Community
+            </a>
+
+
+            <a href="#"
+               data-i18n="affiliate">
+                Affiliate Program
+            </a>
+
+
+            <h4 class="footer-subtitle"
+                data-i18n="footerAbout">
+
+                About Us
+
+            </h4>
+
+
+            <a href="page/contact.html"
+               data-i18n="contact">
+                Contact Us
+            </a>
+
+
+            <a href="#"
+               data-i18n="marketInsights">
+                Market Insights
+            </a>
+
+        </div>
+
+
+
+        <!-- TOOLS + ABOUT -->
+
+        <div class="footer-column">
+
+            <h4 data-i18n="footerTools">
+                Partner Solutions & Tools
+            </h4>
+
+
+            <a href="#"
+               data-i18n="fakeFollowers">
+                Check Fake Followers
+            </a>
+
+
+            <a href="#"
+               data-i18n="youtubeAutomation">
+                YouTube Automation
+            </a>
+
+
+            <a href="#"
+               data-i18n="youtubeId">
+                Find YouTube Channel ID
+            </a>
+
+
+            <a href="#"
+               data-i18n="twitterId">
+                Find X / Twitter User ID
+            </a>
+
+
+            <a href="#"
+               data-i18n="tiktokId">
+                Find TikTok User ID
+            </a>
+
+
+            <h4 class="footer-subtitle"
+                data-i18n="footerLegal">
+
+                Legal
+
+            </h4>
+
+
+            <a href="page/rules.html"
+               data-i18n="privacy">
+                Privacy Policy
+            </a>
+
+
+            <a href="page/rules.html"
+               data-i18n="terms">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER DIVIDER -->
+
+    <div class="container footer-divider"></div>
+
+
+
+    <!-- SOCIAL BUTTONS
+         MUST STAY ABOVE COPYRIGHT -->
+
+    <div class="social-media">
+
+        <a href="https://facebook.com/RspTradingHQ"
+           target="_blank"
+           class="social"
+           aria-label="Facebook">
+
+            f
+
+        </a>
+
+
+        <a href="https://t.me/RspTradingHQ"
+           target="_blank"
+           class="social"
+           aria-label="Telegram">
+
+            ✈
+
+        </a>
+
+
+        <a href="https://x.com/RspHelp/"
+           target="_blank"
+           class="social"
+           aria-label="X">
+
+            𝕏
+
+        </a>
+
+
+        <a href="https://t.me/+AvQmbJSfyk1iMWNl"
+           target="_blank"
+           class="social"
+           aria-label="YouTube">
+
+            ▶
+
+        </a>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="footer-bottom">
+
+        <span>
+            © <span id="year"></span>
+            RspTrading Community
+        </span>
+
+        <span data-i18n="footerBottom">
+            Trade Responsibly • Stay Safe
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
