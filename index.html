@@ -1,203 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="RspTrading Community - Digital Trading Community">
+    <title>Reseller Store Plus | @RspHelp</title>
 
-    <title>RspTrading Community</title>
+    <meta name="description"
+        content="Reseller Store Plus - Social Media & Digital Marketplace">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="header">
 
-    <nav class="navbar container">
+    <div class="container nav">
 
-        <a href="#home" class="logo">
-            <span class="logo-mark">
-            <img src="assets/logo.jpg" alt="RspTrading Logo">
-            </span>
-            <span>Rsp<span>Trading</span></span>
+        <a href="#home" class="brand">
+
+            <img src="assets/logo.png" alt="Reseller Store Plus Logo">
+
+            <div class="brand-info">
+                <span class="brand-name">
+                    Reseller Store Plus
+                </span>
+
+                <span class="username">
+                    @RspHelp
+                </span>
+            </div>
+
         </a>
 
-        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav class="menu" id="menu">
 
-        <div class="nav-links" id="navLinks">
-
-            <a href="#home" data-i18n="home">Home</a>
-
-            <a href="#market" data-i18n="market">
-                Marketplace
+            <a href="#home" data-i18n="nav_home">
+                Home
             </a>
 
-            <a href="#escrow" data-i18n="escrow">
-                Escrow
+            <a href="#categories" data-i18n="nav_categories">
+                Categories
             </a>
 
-            <a href="#rules" data-i18n="rules">
-                Rules
+            <a href="#about" data-i18n="nav_about">
+                About
             </a>
 
-            <a href="#community" data-i18n="community">
-                Community
+            <a href="#contact" data-i18n="nav_contact">
+                Contact
             </a>
 
-            <div class="mobile-language">
+        </nav>
 
-                <select id="mobileLanguage">
+        <div class="nav-right">
 
-                    <option value="en">
-                        🇬🇧 English
-                    </option>
+            <div class="language-switcher">
 
-                    <option value="bn">
-                        🇧🇩 বাংলা
-                    </option>
+                <button class="language-btn active" data-lang="en">
+                    English
+                </button>
 
-                </select>
+                <button class="language-btn" data-lang="bn">
+                    বাংলা
+                </button>
+
+                <button class="language-btn" data-lang="ur">
+                    اردو
+                </button>
 
             </div>
 
+            <button class="theme-btn" id="themeBtn">
+                <span id="themeIcon">☀</span>
+            </button>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
         </div>
 
-        <select class="language-select" id="languageSelect">
-
-            <option value="en">
-                🇬🇧 English
-            </option>
-
-            <option value="bn">
-                🇧🇩 বাংলা
-            </option>
-
-        </select>
-
-        <a href="#community"
-           class="nav-button"
-           data-i18n="join">
-
-            Join Community
-
-        </a>
-
-    </nav>
+    </div>
 
 </header>
-
-
-<main>
 
 
 <!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-    <div class="hero-glow glow-one"></div>
-    <div class="hero-glow glow-two"></div>
+    <div class="container hero-content">
 
-    <div class="container hero-grid">
+        <div class="hero-text">
 
-        <div class="hero-content">
+            <div class="badge">
 
-            <div class="eyebrow">
+                <span class="status-dot"></span>
 
-                <span></span>
-
-                <span data-i18n="eyebrow">
-                    Trusted Digital Trading Community
+                <span data-i18n="badge">
+                    Digital Marketplace
                 </span>
 
             </div>
 
+            <h1 data-i18n="hero_title">
 
-            <h1>
-
-                <span data-i18n="hero1">
-                    Trade smarter.
-                </span>
-
-                <br>
-
-                <strong data-i18n="hero2">
-                    Trade with confidence.
-                </strong>
+                Find The Right
+                <span>Digital Account</span>
+                For You.
 
             </h1>
 
+            <p data-i18n="hero_description">
 
-            <p data-i18n="heroText">
-
-                RspTrading Community is a marketplace-focused
-                community for buying, selling and trading digital
-                accounts and online assets with a safer transaction
-                experience.
+                From old-established accounts to new accounts,
+                discover a wide range of social media and digital
+                items at Reseller Store Plus.
 
             </p>
 
+            <div class="hero-buttons">
 
-            <div class="hero-actions">
+                <a href="#categories"
+                   class="btn primary"
+                   data-i18n="explore">
 
-                <a href="#market"
-                   class="btn btn-primary"
-                   data-i18n="exploreMarket">
-
-                    Explore Marketplace →
+                    Explore Marketplace
 
                 </a>
 
+                <a href="#contact"
+                   class="btn secondary"
+                   data-i18n="contact_us">
 
-                <a href="#escrow"
-                   class="btn btn-secondary"
-                   data-i18n="learnEscrow">
-
-                    Learn About Escrow
+                    Contact Us
 
                 </a>
 
             </div>
 
-
-            <div class="trust-row">
+            <div class="trust">
 
                 <div>
-
-                    <b>01</b>
-
-                    <span data-i18n="trust1">
-                        Community<br>
-                        Driven
-                    </span>
-
+                    <strong data-i18n="old">OLD</strong>
+                    <span data-i18n="accounts">Accounts</span>
                 </div>
 
-
                 <div>
-
-                    <b>02</b>
-
-                    <span data-i18n="trust2">
-                        Escrow<br>
-                        Support
-                    </span>
-
+                    <strong data-i18n="new">NEW</strong>
+                    <span data-i18n="accounts">Accounts</span>
                 </div>
 
-
                 <div>
-
-                    <b>03</b>
-
-                    <span data-i18n="trust3">
-                        Clear Trading<br>
-                        Rules
+                    <strong>100+</strong>
+                    <span data-i18n="digital_items">
+                        Digital Items
                     </span>
-
                 </div>
 
             </div>
@@ -205,301 +168,67 @@
         </div>
 
 
+        <div class="hero-card">
 
-        <div class="hero-card-wrap">
+            <div class="floating-card card-one">
 
-            <div class="hero-card">
+                <span>Facebook</span>
+
+                <strong data-i18n="available">
+                    Available
+                </strong>
+
+            </div>
+
+            <div class="main-card">
 
                 <div class="card-top">
 
-                    <span class="live">
+                    <span class="online"></span>
 
-                        <i></i>
-
-                        <span data-i18n="communityLive">
-                            COMMUNITY LIVE
-                        </span>
-
-                    </span>
-
-                    <span class="dots">
-                        •••
-                    </span>
-
-                </div>
-
-
-                <div class="balance-label"
-                     data-i18n="activeMarket">
-
-                    ACTIVE MARKET
-
-                </div>
-
-
-                <div class="market-number">
-
-                    <span id="counter">
-                        1,284
-                    </span>
-
-                    <small data-i18n="listings">
-                        + listings
-                    </small>
-
-                </div>
-
-
-                <div class="chart">
-
-                    <svg viewBox="0 0 500 180"
-                         preserveAspectRatio="none">
-
-                        <defs>
-
-                            <linearGradient id="area"
-                                x1="0"
-                                x2="0"
-                                y1="0"
-                                y2="1">
-
-                                <stop offset="0%"
-                                    stop-color="#8b5cf6"
-                                    stop-opacity=".35"/>
-
-                                <stop offset="100%"
-                                    stop-color="#8b5cf6"
-                                    stop-opacity="0"/>
-
-                            </linearGradient>
-
-                        </defs>
-
-
-                        <path class="area"
-                            d="M0,155
-                            C55,145 58,120 105,130
-                            C145,139 151,82 200,100
-                            C245,117 265,48 305,70
-                            C344,92 365,45 405,53
-                            C443,61 455,24 500,32
-                            L500,180 L0,180 Z"/>
-
-
-                        <path class="line"
-                            d="M0,155
-                            C55,145 58,120 105,130
-                            C145,139 151,82 200,100
-                            C245,117 265,48 305,70
-                            C344,92 365,45 405,53
-                            C443,61 455,24 500,32"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div class="card-stats">
-
-                    <div>
-
-                        <span data-i18n="buyers">
-                            Buyers
-                        </span>
-
-                        <b>
-                            2.8K+
-                        </b>
-
-                    </div>
-
-
-                    <div>
-
-                        <span data-i18n="sellers">
-                            Sellers
-                        </span>
-
-                        <b>
-                            1.4K+
-                        </b>
-
-                    </div>
-
-
-                    <div>
-
-                        <span data-i18n="trades">
-                            Trades
-                        </span>
-
-                        <b>
-                            8.6K+
-                        </b>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="floating-badge badge-a">
-
-                ✓
-
-                <span data-i18n="verified">
-                    Verified Trade
-                </span>
-
-            </div>
-
-
-            <div class="floating-badge badge-b">
-
-                🛡
-
-                <span data-i18n="protected">
-                    Escrow Protected
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= MARKETPLACE ================= -->
-
-<section class="section" id="market">
-
-    <div class="container">
-
-        <div class="section-head">
-
-            <div>
-
-                <div class="eyebrow">
-
-                    <span></span>
-
-                    <span data-i18n="marketEyebrow">
+                    <span data-i18n="marketplace">
                         Marketplace
                     </span>
 
                 </div>
 
+                <div class="social-icon">
+                    RSP
+                </div>
 
-                <h2 data-i18n="marketTitle">
-                    What can you trade?
-                </h2>
+                <h3>
+                    Reseller Store Plus
+                </h3>
+
+                <p data-i18n="marketplace_text">
+                    Social Media & Digital Marketplace
+                </p>
+
+                <div class="card-line"></div>
+
+                <div class="card-items">
+
+                    <span>Facebook</span>
+                    <span>Instagram</span>
+                    <span>Twitter / X</span>
+
+                    <span data-i18n="more">
+                        More
+                    </span>
+
+                </div>
 
             </div>
 
+            <div class="floating-card card-two">
 
-            <p data-i18n="marketText">
+                <span>Instagram</span>
 
-                Explore popular categories within the
-                RspTrading Community.
+                <strong data-i18n="old_new">
+                    Old & New
+                </strong>
 
-            </p>
-
-        </div>
-
-
-
-        <div class="category-grid">
-
-
-            <article class="category-card">
-
-                <div class="icon">
-                    ◎
-                </div>
-
-                <h3 data-i18n="socialTitle">
-                    Social Accounts
-                </h3>
-
-                <p data-i18n="socialText">
-                    Social media accounts and digital profiles.
-                </p>
-
-                <span data-i18n="explore">
-                    Explore →
-                </span>
-
-            </article>
-
-
-
-            <article class="category-card">
-
-                <div class="icon">
-                    ✉
-                </div>
-
-                <h3 data-i18n="emailTitle">
-                    Email Accounts
-                </h3>
-
-                <p data-i18n="emailText">
-                    Established email accounts and related assets.
-                </p>
-
-                <span data-i18n="explore">
-                    Explore →
-                </span>
-
-            </article>
-
-
-
-            <article class="category-card">
-
-                <div class="icon">
-                    ◈
-                </div>
-
-                <h3 data-i18n="assetTitle">
-                    Digital Assets
-                </h3>
-
-                <p data-i18n="assetText">
-                    Other online assets offered by community sellers.
-                </p>
-
-                <span data-i18n="explore">
-                    Explore →
-                </span>
-
-            </article>
-
-
-
-            <article class="category-card">
-
-                <div class="icon">
-                    ↗
-                </div>
-
-                <h3 data-i18n="customTitle">
-                    Custom Deals
-                </h3>
-
-                <p data-i18n="customText">
-                    Connect with buyers and sellers for private deals.
-                </p>
-
-                <span data-i18n="explore">
-                    Explore →
-                </span>
-
-            </article>
+            </div>
 
         </div>
 
@@ -508,115 +237,209 @@
 </section>
 
 
+<!-- ================= CATEGORIES ================= -->
 
-<!-- ================= ESCROW ================= -->
+<section class="section categories" id="categories">
 
-<section class="escrow-section" id="escrow">
+    <div class="container">
 
-    <div class="container escrow-grid">
+        <div class="section-heading">
 
-        <div>
+            <span data-i18n="marketplace_title">
+                MARKETPLACE
+            </span>
 
-            <div class="eyebrow">
+            <h2 data-i18n="categories_title">
+                Explore Our Categories
+            </h2>
 
-                <span></span>
+            <p data-i18n="categories_description">
+                Find old, new and various types of social media
+                accounts and digital items.
+            </p>
 
-                <span data-i18n="escrowEyebrow">
-                    RspTrading Escrow
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                <div class="category-icon facebook">
+                    f
+                </div>
+
+                <h3>Facebook</h3>
+
+                <p data-i18n="facebook_desc">
+                    Old & new Facebook accounts.
+                </p>
+
+                <span data-i18n="explore_arrow">
+                    Explore →
                 </span>
 
             </div>
 
 
-            <h2 data-i18n="escrowTitle">
-                A safer way to complete a trade.
+            <div class="category-card">
+
+                <div class="category-icon twitter">
+                    𝕏
+                </div>
+
+                <h3>Twitter / X</h3>
+
+                <p data-i18n="twitter_desc">
+                    Established and new X accounts.
+                </p>
+
+                <span data-i18n="explore_arrow">
+                    Explore →
+                </span>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon instagram">
+                    ◎
+                </div>
+
+                <h3>Instagram</h3>
+
+                <p data-i18n="instagram_desc">
+                    Various Instagram account options.
+                </p>
+
+                <span data-i18n="explore_arrow">
+                    Explore →
+                </span>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon telegram">
+                    ✈
+                </div>
+
+                <h3>Telegram</h3>
+
+                <p data-i18n="telegram_desc">
+                    Telegram accounts and digital items.
+                </p>
+
+                <span data-i18n="explore_arrow">
+                    Explore →
+                </span>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon email">
+                    @
+                </div>
+
+                <h3>Email</h3>
+
+                <p data-i18n="email_desc">
+                    Different types of email accounts.
+                </p>
+
+                <span data-i18n="explore_arrow">
+                    Explore →
+                </span>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <div class="category-icon more">
+                    +
+                </div>
+
+                <h3 data-i18n="more_items">
+                    More Items
+                </h3>
+
+                <p data-i18n="more_desc">
+                    More digital products coming soon.
+                </p>
+
+                <span data-i18n="explore_arrow">
+                    Explore →
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OLD / NEW ================= -->
+
+<section class="section showcase">
+
+    <div class="container showcase-grid">
+
+        <div class="showcase-box">
+
+            <div class="showcase-number">
+                01
+            </div>
+
+            <span class="small-title" data-i18n="established">
+                ESTABLISHED
+            </span>
+
+            <h2 data-i18n="old_accounts">
+                Old Accounts
             </h2>
 
-
-            <p data-i18n="escrowText">
-
-                Buyer and seller can inspect the account or
-                digital asset, discuss the price and complete
-                the transaction through the RspTrading Escrow service.
-
+            <p data-i18n="old_accounts_desc">
+                Looking for an account with an established
+                history? Explore our collection of older
+                social media accounts.
             </p>
 
-
-            <a href="#rules"
-               class="btn btn-primary"
-               data-i18n="howWorks">
-
-                How It Works →
-
+            <a href="#contact" data-i18n="view_items">
+                View Available Items →
             </a>
 
         </div>
 
 
+        <div class="showcase-box">
 
-        <div class="steps">
-
-
-            <div class="step">
-
-                <b>01</b>
-
-                <div>
-
-                    <h3 data-i18n="step1Title">
-                        Discuss & Verify
-                    </h3>
-
-                    <p data-i18n="step1Text">
-                        Buyer and seller inspect the asset
-                        and agree on the price.
-                    </p>
-
-                </div>
-
+            <div class="showcase-number">
+                02
             </div>
 
+            <span class="small-title" data-i18n="fresh">
+                FRESH
+            </span>
 
+            <h2 data-i18n="new_accounts">
+                New Accounts
+            </h2>
 
-            <div class="step">
+            <p data-i18n="new_accounts_desc">
+                Need a fresh start? We also offer newly
+                created accounts and various digital items.
+            </p>
 
-                <b>02</b>
-
-                <div>
-
-                    <h3 data-i18n="step2Title">
-                        Use Escrow
-                    </h3>
-
-                    <p data-i18n="step2Text">
-                        The transaction is initiated through
-                        the RspTrading Escrow process.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="step">
-
-                <b>03</b>
-
-                <div>
-
-                    <h3 data-i18n="step3Title">
-                        Complete Trade
-                    </h3>
-
-                    <p data-i18n="step3Text">
-                        After the agreed conditions are fulfilled,
-                        the trade is completed.
-                    </p>
-
-                </div>
-
-            </div>
+            <a href="#contact" data-i18n="view_items">
+                View Available Items →
+            </a>
 
         </div>
 
@@ -625,122 +448,78 @@
 </section>
 
 
+<!-- ================= ABOUT ================= -->
 
-<!-- ================= RULES ================= -->
+<section class="section about" id="about">
 
-<section class="section" id="rules">
+    <div class="container about-grid">
 
-    <div class="container">
+        <div class="about-logo">
 
-        <div class="section-head centered">
-
-            <div>
-
-                <div class="eyebrow">
-
-                    <span></span>
-
-                    <span data-i18n="rulesEyebrow">
-                        Safety First
-                    </span>
-
-                </div>
-
-
-                <h2 data-i18n="rulesTitle">
-                    Trade by the rules.
-                </h2>
-
-            </div>
-
-
-            <p data-i18n="rulesText">
-
-                Simple rules help keep the community
-                safer for everyone.
-
-            </p>
+            <img src="assets/logo.png"
+                 alt="Reseller Store Plus">
 
         </div>
 
 
+        <div class="about-text">
 
-        <div class="rules-grid">
+            <span class="small-title"
+                  data-i18n="about_us">
 
-
-            <div class="rule">
-
-                <span>01</span>
-
-                <h3 data-i18n="rule1Title">
-                    Verify Before Paying
-                </h3>
-
-                <p data-i18n="rule1Text">
-
-                    Always review the account or asset carefully
-                    before agreeing to a deal.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="rule">
-
-                <span>02</span>
-
-                <h3 data-i18n="rule2Title">
-                    Use RspTrading Escrow
-                </h3>
-
-                <p data-i18n="rule2Text">
-
-                    For supported trades, use our escrow process
-                    instead of sending funds directly.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="rule warning">
-
-                <span>03</span>
-
-                <h3 data-i18n="rule3Title">
-                    Avoid Off-Platform Deals
-                </h3>
-
-                <p data-i18n="rule3Text">
-
-                    Transactions completed outside the RspTrading
-                    Escrow service are at the parties' own risk.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="notice">
-
-            <strong data-i18n="important">
-                ⚠ Important:
-            </strong>
-
-            <span data-i18n="notice">
-
-                If a buyer or seller chooses to complete a transaction
-                outside the RspTrading Escrow service and is scammed,
-                RspTrading is not responsible for that transaction.
+                ABOUT US
 
             </span>
 
+            <h2 data-i18n="about_title">
+
+                Welcome to
+                <span>Reseller Store Plus</span>
+
+            </h2>
+
+            <p data-i18n="about_text_1">
+
+                Reseller Store Plus is a digital marketplace
+                focused on social media accounts and various
+                digital items.
+
+            </p>
+
+            <p data-i18n="about_text_2">
+
+                Whether you are looking for old-established
+                accounts, new accounts, or other digital items,
+                our marketplace is designed to make finding
+                what you need simple and organized.
+
+            </p>
+
+            <div class="features">
+
+                <div>
+                    <strong>01</strong>
+                    <span data-i18n="wide_selection">
+                        Wide Selection
+                    </span>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <span data-i18n="organized">
+                        Organized Marketplace
+                    </span>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <span data-i18n="easy_contact">
+                        Easy Contact
+                    </span>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
@@ -748,47 +527,30 @@
 </section>
 
 
+<!-- ================= CTA ================= -->
 
-<!-- ================= COMMUNITY ================= -->
+<section class="cta">
 
-<section class="community-section" id="community">
-
-    <div class="container community-box">
+    <div class="container cta-content">
 
         <div>
 
-            <div class="eyebrow">
+            <span data-i18n="looking">
+                LOOKING FOR SOMETHING?
+            </span>
 
-                <span></span>
-
-                <span data-i18n="communityEyebrow">
-                    RspTrading Community
-                </span>
-
-            </div>
-
-
-            <h2 data-i18n="communityTitle">
-                Join the community.
+            <h2 data-i18n="cta_title">
+                Your next digital item
+                might be here.
             </h2>
-
-
-            <p data-i18n="communityText">
-
-                Meet buyers, sellers and traders,
-                discover new offers and stay updated.
-
-            </p>
 
         </div>
 
+        <a href="#contact"
+           class="btn primary"
+           data-i18n="contact_rsp">
 
-        <a href="https://t.me/RspTradingHQ"
-           target="_blank"
-           class="btn btn-light"
-           data-i18n="telegram">
-
-            Join on Telegram ↗
+            Contact @RspHelp →
 
         </a>
 
@@ -796,278 +558,282 @@
 
 </section>
 
-</main>
 
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="container contact-box">
+
+        <div class="contact-info">
+
+            <span class="small-title"
+                  data-i18n="get_touch">
+
+                GET IN TOUCH
+
+            </span>
+
+            <h2 data-i18n="contact_title">
+                Need an account or digital item?
+            </h2>
+
+            <p data-i18n="contact_description">
+                Contact Reseller Store Plus and let us know
+                what you are looking for.
+            </p>
+
+        </div>
+
+
+        <div class="contact-methods">
+
+            <!-- TELEGRAM Direct MSJ-->
+
+            <a href="http://t.me/RspHelp?direct"
+               target="_blank"
+               class="contact-method">
+
+                <div class="contact-method-icon telegram-icon">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21.7 3.2 18.5 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.6.9 12c-1.1-.3-1.1-1 .2-1.5L20.7 3c.9-.3 1.7.2 1 0.2z"/>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <strong>Direct message on Telegram</strong>
+
+                    <span>http://t.me/RspHelp?direct</span>
+
+                </div>
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a href="mailto:resellerstoreplus@gmail.com"
+               class="contact-method">
+
+                <div class="contact-method-icon email-icon">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <strong>Email</strong>
+
+                    <span>resellerstoreplus@gmail.com</span>
+
+                </div>
+
+            </a>
+
+
+            <!-- WHATSAPP -->
+
+            <a href="https://wa.me/+8801982887835"
+               target="_blank"
+               class="contact-method">
+
+                <div class="contact-method-icon whatsapp-icon">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.6 6L.2 24l6.4-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7c-1.7 0-3.4-.5-4.9-1.3l-.3-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.2 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.4-3.9-3.2-.3-.5.3-.4.9-1.4.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.7.7.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4Z"/>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <strong>WhatsApp</strong>
+
+                    <span>+8801982887835</span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SOCIAL ICONS ================= -->
+
+<section class="social-section">
+
+    <div class="container">
+
+        <div class="social-heading">
+
+            <span data-i18n="follow_us">
+                FOLLOW US
+            </span>
+
+            <h3 data-i18n="social_title">
+                Connect With Reseller Store Plus
+            </h3>
+
+        </div>
+
+
+        <div class="social-icons">
+
+
+            <!-- FACEBOOK -->
+
+            <a href="https://facebook.com/RspHelp/"
+               class="social-icon-link facebook-social"
+               aria-label="Facebook"
+               title="Facebook">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.7.3-1 1-1Z"/>
+                </svg>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a href="https://instagram.com/RspHelp/"
+               class="social-icon-link instagram-social"
+               aria-label="Instagram"
+               title="Instagram">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17.5" cy="6.7" r="1.2"/>
+                </svg>
+
+            </a>
+
+
+            <!-- X -->
+
+            <a href="https://twitter.com/RspHelp/"
+               class="social-icon-link x-social"
+               aria-label="X"
+               title="X">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.2 2H22l-8.3 9.5L23.5 22h-7.6l-6-7.2L3.6 22H0l8.9-10.2L.5 2h7.8l5.4 6.4L18.2 2Zm-1.3 17.3h2.1L6.9 4.6H4.7l12.2 14.7Z"/>
+                </svg>
+
+            </a>
+
+
+            <!-- TELEGRAM Masg -->
+
+            <a href="http://t.me/RspHelp"
+               target="_blank"
+               class="social-icon-link telegram-social"
+               aria-label="Telegram"
+               title="Telegram">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M21.7 3.2 18.5 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.9 13.6.9 12c-1.1-.3-1.1-1 .2-1.5L20.7 3c.9-.3 1.7.2 1 0.2z"/>
+                </svg>
+
+            </a>
+
+
+            <!-- WHATSAPP COMMUNITY-->
+
+            <a href="https://chat.whatsapp.com/K3xnKyHU8zL4MCndGLjWRL"
+               target="_blank"
+               class="social-icon-link whatsapp-social"
+               aria-label="WhatsApp"
+               title="WhatsApp">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.6 6L.2 24l6.4-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7c-1.7 0-3.4-.5-4.9-1.3l-.3-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.2 4.6Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.4-3.9-3.2-.3-.5.3-.4.9-1.4.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.7.7.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4Z"/>
+                </svg>
+
+            </a>
+
+
+            <!-- YOUTUBE -->
+
+            <a href="https://youtube.com/@ResellerStorePlus"
+               class="social-icon-link youtube-social"
+               aria-label="YouTube"
+               title="YouTube">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
+                </svg>
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a href="mailto:resellerstoreplus@gmail.com"
+               class="social-icon-link email-social"
+               aria-label="Email"
+               title="Email">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="container footer-main">
-
-
-        <!-- BRAND -->
+    <div class="container footer">
 
         <div class="footer-brand">
 
-            <a href="#home" class="logo">
-                <span class="logo-mark">
-                <img src="assets/logo.jpg" alt="RspTrading Logo">
-                </span>
-                <span>
-                    Rsp<span>Trading Community</span>
-                </span>
+            <img src="assets/logo.png"
+                 alt="RSP Logo">
 
-            </a>
+            <div>
 
-            <p data-i18n="footerText">
-                Digital trading, powered by community.
-            </p>
+                <strong>
+                    Reseller Store Plus
+                </strong>
+                <span>@RspHelp</span>
+
+            </div>
 
         </div>
 
 
-
-        <!-- SOCIAL MEDIA -->
-
-        <div class="footer-column">
-
-            <h4 data-i18n="footerSocial">
-                Social Media
-            </h4>
-
-
-            <a href="#"
-               data-i18n="buyFacebook">
-                Buy Facebook Accounts
-            </a>
-
-
-            <a href="#"
-               data-i18n="buyYoutube">
-                Buy YouTube Channels
-            </a>
-
-
-            <a href="#"
-               data-i18n="buyTiktok">
-                Buy TikTok Accounts
-            </a>
-
-
-            <a href="#"
-               data-i18n="buyTwitter">
-                Buy X / Twitter Accounts
-            </a>
-
-
-            <a href="#"
-               data-i18n="buyInstagram">
-                Buy Instagram Accounts
-            </a>
-
-
-            <a href="#"
-               data-i18n="buyBusiness">
-                Buy Online Businesses
-            </a>
-
-        </div>
-
-
-
-        <!-- SERVICES -->
-
-        <div class="footer-column">
-
-            <h4 data-i18n="footerServices">
-                Our Services
-            </h4>
-
-
-            <a href="page/escrow.html"
-               data-i18n="footerEscrow">
-                Escrow Service
-            </a>
-
-
-            <a href="#"
-               data-i18n="recentlySold">
-                Recently Sold
-            </a>
-
-
-            <a href="#community"
-               data-i18n="footerCommunity">
-                Community
-            </a>
-
-
-            <a href="#"
-               data-i18n="affiliate">
-                Affiliate Program
-            </a>
-
-
-            <h4 class="footer-subtitle"
-                data-i18n="footerAbout">
-
-                About Us
-
-            </h4>
-
-
-            <a href="page/contact.html"
-               data-i18n="contact">
-                Contact Us
-            </a>
-
-
-            <a href="#"
-               data-i18n="marketInsights">
-                Market Insights
-            </a>
-
-        </div>
-
-
-
-        <!-- TOOLS + ABOUT -->
-
-        <div class="footer-column">
-
-            <h4 data-i18n="footerTools">
-                Partner Solutions & Tools
-            </h4>
-
-
-            <a href="#"
-               data-i18n="fakeFollowers">
-                Check Fake Followers
-            </a>
-
-
-            <a href="#"
-               data-i18n="youtubeAutomation">
-                YouTube Automation
-            </a>
-
-
-            <a href="#"
-               data-i18n="youtubeId">
-                Find YouTube Channel ID
-            </a>
-
-
-            <a href="#"
-               data-i18n="twitterId">
-                Find X / Twitter User ID
-            </a>
-
-
-            <a href="#"
-               data-i18n="tiktokId">
-                Find TikTok User ID
-            </a>
-
-
-            <h4 class="footer-subtitle"
-                data-i18n="footerLegal">
-
-                Legal
-
-            </h4>
-
-
-            <a href="page/rules.html"
-               data-i18n="privacy">
-                Privacy Policy
-            </a>
-
-
-            <a href="page/rules.html"
-               data-i18n="terms">
-                Terms & Conditions
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- FOOTER DIVIDER -->
-
-    <div class="container footer-divider"></div>
-
-
-
-    <!-- SOCIAL BUTTONS
-         MUST STAY ABOVE COPYRIGHT -->
-
-    <div class="social-media">
-
-        <a href="https://facebook.com/RspTradingHQ"
-           target="_blank"
-           class="social"
-           aria-label="Facebook">
-
-            f
-
-        </a>
-
-
-        <a href="https://t.me/RspTradingHQ"
-           target="_blank"
-           class="social"
-           aria-label="Telegram">
-
-            ✈
-
-        </a>
-
-
-        <a href="https://x.com/RspHelp/"
-           target="_blank"
-           class="social"
-           aria-label="X">
-
-            𝕏
-
-        </a>
-
-
-        <a href="https://t.me/+AvQmbJSfyk1iMWNl"
-           target="_blank"
-           class="social"
-           aria-label="YouTube">
-
-            ▶
-
-        </a>
-
-    </div>
-
-
-
-    <!-- COPYRIGHT -->
-
-    <div class="footer-bottom">
-
-        <span>
-            © <span id="year"></span>
-            RspTrading Community
-        </span>
-
-        <span data-i18n="footerBottom">
-            Trade Responsibly • Stay Safe
-        </span>
+        <p>
+
+            Copyright © 2025-<span id="year"></span>
+            ResellerStorePlus. |
+            <span data-i18n="rights">
+                All rights reserved.
+            </span>
+
+        </p>
 
     </div>
 
 </footer>
-
 
 
 <script src="script.js"></script>
