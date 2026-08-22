@@ -1,1 +1,2724 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>More Items | Reseller Store Plus</title>
+
+<style>
+
+/* =========================================================
+   THEME
+========================================================= */
+
+:root{
+    --bg:#f4f6fa;
+    --card:#ffffff;
+    --soft:#f7f8fc;
+    --text:#18202d;
+    --muted:#667085;
+    --primary:#6857e8;
+    --primary2:#8b7cff;
+    --border:#e4e7ee;
+    --shadow:0 7px 24px rgba(20,25,40,.07);
+    --green:#16a36a;
+}
+
+body.dark{
+    --bg:#10141b;
+    --card:#181e27;
+    --soft:#202732;
+    --text:#f4f6fa;
+    --muted:#aab2c0;
+    --primary:#8d7cff;
+    --primary2:#a697ff;
+    --border:#2b3440;
+    --shadow:0 8px 25px rgba(0,0,0,.30);
+    --green:#36cf8d;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:.25s ease;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid var(--border);
+}
+
+body.dark .header{
+    background:rgba(16,20,27,.93);
+}
+
+.navbar{
+    width:100%;
+    max-width:1200px;
+
+    min-height:68px;
+
+    margin:auto;
+    padding:0 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    text-decoration:none;
+    color:var(--text);
+
+    font-size:15px;
+    font-weight:800;
+}
+
+.logo img{
+    width:39px;
+    height:39px;
+
+    object-fit:contain;
+    border-radius:9px;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.nav-btn,
+.back-btn{
+    height:38px;
+
+    padding:0 12px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    background:var(--card);
+    color:var(--text);
+
+    font-size:11px;
+
+    cursor:pointer;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    width:100%;
+    max-width:1050px;
+
+    margin:auto;
+
+    padding:50px 18px 30px;
+
+    text-align:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+
+    padding:7px 13px;
+
+    border:1px solid var(--border);
+    border-radius:30px;
+
+    background:var(--card);
+    color:var(--primary);
+
+    font-size:11px;
+    font-weight:700;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(30px,5vw,46px);
+    line-height:1.15;
+
+    margin-bottom:14px;
+}
+
+.hero h1 .highlight{
+    color:var(--primary);
+}
+
+.hero p{
+    max-width:800px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:13px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.filter-area{
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 18px 22px;
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+
+    padding:9px;
+
+    overflow-x:auto;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+}
+
+.filter{
+    flex:0 0 auto;
+
+    padding:8px 13px;
+
+    border:1px solid var(--border);
+    border-radius:9px;
+
+    background:var(--soft);
+    color:var(--text);
+
+    cursor:pointer;
+
+    font-size:11px;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:#fff;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products{
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 18px 45px;
+}
+
+.product-grid{
+    display:grid;
+
+    /*
+      বড় screen:
+      যতগুলো card fit করবে ততগুলো পাশাপাশি থাকবে।
+
+      ছোট screen:
+      space শেষ হলে automatically নিচের row-তে যাবে।
+    */
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:13px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.product-card{
+    min-width:0;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    padding:15px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+    overflow:hidden;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.product-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--primary2)
+        );
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+}
+
+.product-head{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:10px;
+}
+
+.product-icon{
+    width:42px;
+    height:42px;
+
+    min-width:42px;
+
+    padding:7px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--soft);
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+}
+
+.product-icon img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.product-card h3{
+    font-size:13px;
+    line-height:1.25;
+
+    margin-bottom:3px;
+}
+
+.type{
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.product-card p{
+    color:var(--muted);
+
+    font-size:10.5px;
+    line-height:1.65;
+}
+
+.available{
+    display:inline-flex;
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:10px;
+
+    color:var(--green);
+
+    font-size:9px;
+    font-weight:700;
+}
+
+.available::before{
+    content:"";
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--green);
+}
+
+
+/* =========================================================
+   INFORMATION CARDS
+========================================================= */
+
+.info{
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 18px 45px;
+}
+
+.info-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:13px;
+}
+
+.info-card{
+    padding:21px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+}
+
+.info-card .icon{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.info-card h3{
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.info-card p{
+    color:var(--muted);
+
+    font-size:10.5px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    width:100%;
+    max-width:850px;
+
+    margin:auto;
+
+    padding:0 18px 48px;
+}
+
+.cta-box{
+    padding:30px 20px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    color:#fff;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 35px rgba(104,87,232,.22);
+}
+
+.cta-box h2{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.cta-box p{
+    max-width:680px;
+
+    margin:0 auto 17px;
+
+    font-size:11px;
+    line-height:1.75;
+}
+
+.contact{
+    display:flex;
+    justify-content:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+}
+
+.contact a{
+    padding:9px 14px;
+
+    border-radius:9px;
+
+    background:#fff;
+
+    color:#222;
+
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:25px 18px;
+
+    border-top:1px solid var(--border);
+
+    background:var(--card);
+
+    text-align:center;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    margin-bottom:7px;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.footer-logo img{
+    width:30px;
+    height:30px;
+
+    border-radius:7px;
+}
+
+footer p{
+    color:var(--muted);
+
+    font-size:9.5px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .product-grid{
+        grid-template-columns:
+            repeat(auto-fit,minmax(160px,1fr));
+
+        gap:10px;
+    }
+
+}
+
+@media(max-width:430px){
+
+    .product-grid{
+        grid-template-columns:
+            repeat(auto-fit,minmax(145px,1fr));
+
+        gap:9px;
+    }
+
+    .product-card{
+        padding:12px;
+    }
+
+    .product-icon{
+        width:36px;
+        height:36px;
+        min-width:36px;
+    }
+
+    .product-card h3{
+        font-size:11px;
+    }
+
+    .product-card p{
+        font-size:9.5px;
+    }
+
+    .back-btn{
+        display:none;
+    }
+
+    .logo{
+        font-size:12px;
+    }
+
+    .logo img{
+        width:34px;
+        height:34px;
+    }
+
+}
+
+
+/* =========================================================
+   URDU DIRECTION
+========================================================= */
+
+body.urdu{
+    direction:rtl;
+}
+
+body.urdu .filters{
+    direction:rtl;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+<nav class="navbar">
+
+<a href="../index.html" class="logo">
+
+<img
+src="../assets/logo.png"
+alt="Reseller Store Plus"
+>
+
+<span id="brandName">
+Reseller Store Plus
+</span>
+
+</a>
+
+
+<div class="nav-right">
+
+<a
+href="../index.html"
+class="back-btn"
+id="backBtn"
+>
+← Back
+</a>
+
+<button
+class="nav-btn"
+id="langBtn"
+>
+বাংলা
+</button>
+
+<button
+class="nav-btn"
+id="themeBtn"
+>
+☾
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+<div class="badge">
+
+🚀
+
+<span id="badgeText"></span>
+
+</div>
+
+
+<h1>
+
+<span id="titleMain"></span>
+
+<br>
+
+<span
+class="highlight"
+id="titleSub"
+></span>
+
+</h1>
+
+
+<p id="heroText"></p>
+
+</section>
+
+
+
+<!-- =========================================================
+     FILTER
+========================================================= -->
+
+<div class="filter-area">
+
+<div class="filters">
+
+<button
+class="filter active"
+data-filter="all"
+id="filterAll"
+></button>
+
+<button
+class="filter"
+data-filter="social"
+id="filterSocial"
+></button>
+
+<button
+class="filter"
+data-filter="business"
+id="filterBusiness"
+></button>
+
+<button
+class="filter"
+data-filter="entertainment"
+id="filterEntertainment"
+></button>
+
+<button
+class="filter"
+data-filter="dating"
+id="filterDating"
+></button>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PRODUCTS
+========================================================= -->
+
+<section class="products">
+
+<div class="product-grid">
+
+
+<!-- 01 TWITTER -->
+
+<div class="product-card" data-category="social">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/twitter-social-icon.svg"
+alt="Twitter"
+>
+
+</div>
+
+<div>
+
+<h3 id="twitterName"></h3>
+
+<span
+class="type"
+id="socialType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="twitterDesc"></p>
+
+<span
+class="available"
+id="available1"
+></span>
+
+</div>
+
+
+
+<!-- 02 facebook -->
+<div class="product-card" data-category="social">
+<div class="product-head">
+<div class="product-icon">
+
+<img
+src="../assets/facebook-social-icon.svg"
+alt="Facebook"
+>
+</div>
+
+<div>
+<h3 id="facebookName"></h3>
+<span
+class="type"
+id="socialType2"
+></span>
+</div>
+</div>
+<p id="facebookDesc"></p>
+<span
+class="available"
+id="available4"
+></span>
+</div>
+
+<!-- 03 INSTAGRAM -->
+<div class="product-card" data-category="social">
+<div class="product-head">
+<div class="product-icon">
+<img
+src="../assets/instagram-social-icon.svg"
+alt="Instagram"
+>
+</div>
+<div>
+<h3>Instagram</h3>
+<span
+class="type"
+id="socialType3"
+></span>
+</div>
+</div>
+<p id="instagramDesc"></p>
+<span
+class="available"
+id="available5"
+></span>
+</div>
+
+<!-- 04 DISCORD -->
+<div class="product-card" data-category="social">
+<div class="product-head">
+<div class="product-icon">
+
+<img
+src="../assets/product/discord-product-icon.svg"
+alt="Discord"
+>
+
+</div>
+
+<div>
+<h3>Discord</h3>
+<span
+class="type"
+id="communityType1"
+></span>
+</div>
+
+</div>
+<p id="discordDesc"></p>
+<span
+class="available"
+id="available2"
+></span>
+</div>
+
+<!-- 05 LinkedIn -->
+<div class="product-card" data-category="social">
+<div class="product-head">
+<div class="product-icon">
+
+<img
+src="../assets/linkedin-social-icon.svg"
+alt="LinkedIn"
+>
+</div>
+<div>
+<h3>LinkedIn</h3>
+<span
+class="type"
+id="professionalType1"
+></span>
+</div>
+</div>
+<p id="linkedinDesc"></p>
+<span
+class="available"
+id="available3"
+></span>
+</div>
+    
+<!-- 24 YOUTUBE -->
+<div class="product-card" data-category="social">
+<div class="product-head">
+<div class="product-icon">
+<img
+src="../assets/youtube-social-icon.svg"
+alt="YouTube"
+>
+</div>
+<div>
+<h3 id="youtubeName"></h3>
+<span
+class="type"
+id="videoType1"
+></span>
+</div>
+</div>
+<p id="youtubeDesc"></p>
+<span
+class="available"
+id="available24"
+></span>
+</div>
+    
+<!-- 20 TIKTOK -->
+<div class="product-card" data-category="social">
+<div class="product-head">
+<div class="product-icon">
+<img
+src="../assets/product/tiktok-product-icon.svg"
+alt="TikTok"
+>
+</div>
+<div>
+<h3>TikTok</h3>
+<span
+class="type"
+id="socialType6"
+></span>
+</div>
+</div>
+<p id="tiktokDesc"></p>
+<span
+class="available"
+id="available20"
+></span>
+</div>
+
+<!-- 06 BINANCE -->
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+<div class="product-icon">
+<img
+src="../assets/product/binance-product-icon.svg"
+alt="Binance"
+>
+</div>
+<div>
+<h3>Binance Verified</h3>
+<span
+class="type"
+id="financialType1"
+></span>
+</div>
+</div>
+<p id="binanceDesc"></p>
+<span
+class="available"
+id="available6"
+></span>
+</div>
+
+<!-- 07 CASH APP -->
+
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/cashapp-product-icon.svg"
+alt="Cash App"
+>
+
+</div>
+
+<div>
+
+<h3>Cash App</h3>
+
+<span
+class="type"
+id="financialType2"
+></span>
+
+</div>
+
+</div>
+
+<p id="cashappDesc"></p>
+
+<span
+class="available"
+id="available7"
+></span>
+
+</div>
+
+
+
+<!-- 08 AMAZON -->
+
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/amazon-product-icon.svg"
+alt="Amazon"
+>
+
+</div>
+
+<div>
+
+<h3>Amazon</h3>
+
+<span
+class="type"
+id="ecommerceType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="amazonDesc"></p>
+
+<span
+class="available"
+id="available8"
+></span>
+
+</div>
+
+
+
+<!-- 09 NETFLIX -->
+
+<div class="product-card" data-category="entertainment">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/netflix-product-icon.svg"
+alt="Netflix"
+>
+
+</div>
+
+<div>
+
+<h3>Netflix</h3>
+
+<span
+class="type"
+id="entertainmentType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="netflixDesc"></p>
+
+<span
+class="available"
+id="available9"
+></span>
+
+</div>
+
+
+
+<!-- 10 SPOTIFY -->
+
+<div class="product-card" data-category="entertainment">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/spotify-product-icon.svg"
+alt="Spotify"
+>
+
+</div>
+
+<div>
+
+<h3>Spotify</h3>
+
+<span
+class="type"
+id="entertainmentType2"
+></span>
+
+</div>
+
+</div>
+
+<p id="spotifyDesc"></p>
+
+<span
+class="available"
+id="available10"
+></span>
+
+</div>
+
+
+
+<!-- 11 WALMART -->
+
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/walmart-product-icon.svg"
+alt="Walmart"
+>
+
+</div>
+
+<div>
+
+<h3>Walmart</h3>
+
+<span
+class="type"
+id="ecommerceType2"
+></span>
+
+</div>
+
+</div>
+
+<p id="walmartDesc"></p>
+
+<span
+class="available"
+id="available11"
+></span>
+
+</div>
+
+
+
+<!-- 12 MEETME -->
+
+<div class="product-card" data-category="dating">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/meetme-product-icon.svg"
+alt="MeetMe"
+>
+
+</div>
+
+<div>
+
+<h3>MeetMe Dating</h3>
+
+<span
+class="type"
+id="datingType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="meetmeDesc"></p>
+
+<span
+class="available"
+id="available12"
+></span>
+
+</div>
+
+
+
+<!-- 13 EHARMONY -->
+
+<div class="product-card" data-category="dating">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/eharmony-product-icon.svg"
+alt="eHarmony"
+>
+
+</div>
+
+<div>
+
+<h3>eHarmony Dating</h3>
+
+<span
+class="type"
+id="datingType2"
+></span>
+
+</div>
+
+</div>
+
+<p id="eharmonyDesc"></p>
+
+<span
+class="available"
+id="available13"
+></span>
+
+</div>
+
+
+
+<!-- 14 BUMBLE -->
+
+<div class="product-card" data-category="dating">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/bumble-product-icon.svg"
+alt="Bumble"
+>
+
+</div>
+
+<div>
+
+<h3>Bumble Dating</h3>
+
+<span
+class="type"
+id="datingType3"
+></span>
+
+</div>
+
+</div>
+
+<p id="bumbleDesc"></p>
+
+<span
+class="available"
+id="available14"
+></span>
+
+</div>
+
+
+
+<!-- 15 QUORA -->
+
+<div class="product-card" data-category="social">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/quora-product-icon.svg"
+alt="Quora"
+>
+
+</div>
+
+<div>
+
+<h3>Quora</h3>
+
+<span
+class="type"
+id="communityType2"
+></span>
+
+</div>
+
+</div>
+
+<p id="quoraDesc"></p>
+
+<span
+class="available"
+id="available15"
+></span>
+
+</div>
+
+
+
+<!-- 16 TWITCH -->
+
+<div class="product-card" data-category="entertainment">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/twitch-product-icon.svg"
+alt="Twitch"
+>
+
+</div>
+
+<div>
+
+<h3>Twitch</h3>
+
+<span
+class="type"
+id="streamingType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="twitchDesc"></p>
+
+<span
+class="available"
+id="available16"
+></span>
+
+</div>
+
+
+
+<!-- 17 REDDIT -->
+
+<div class="product-card" data-category="social">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/reddit-product-icon.svg"
+alt="Reddit"
+>
+
+</div>
+
+<div>
+
+<h3>Reddit</h3>
+
+<span
+class="type"
+id="communityType3"
+></span>
+
+</div>
+
+</div>
+
+<p id="redditDesc"></p>
+
+<span
+class="available"
+id="available17"
+></span>
+
+</div>
+
+
+
+<!-- 18 BLUESKY -->
+
+<div class="product-card" data-category="social">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/bluesky-product-icon.svg"
+alt="Bluesky"
+>
+
+</div>
+
+<div>
+
+<h3>Bluesky</h3>
+
+<span
+class="type"
+id="socialType4"
+></span>
+
+</div>
+
+</div>
+
+<p id="blueskyDesc"></p>
+
+<span
+class="available"
+id="available18"
+></span>
+
+</div>
+
+
+
+<!-- 19 TRUTH SOCIAL -->
+
+<div class="product-card" data-category="social">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/truthsocial-product-icon.svg"
+alt="Truth Social"
+>
+
+</div>
+
+<div>
+
+<h3>Truth Social</h3>
+
+<span
+class="type"
+id="socialType5"
+></span>
+
+</div>
+
+</div>
+
+<p id="truthDesc"></p>
+
+<span
+class="available"
+id="available19"
+></span>
+
+</div>
+<!-- 21 INDEED -->
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/indeed-product-icon.svg"
+alt="Indeed"
+>
+
+</div>
+
+<div>
+
+<h3>Indeed</h3>
+
+<span
+class="type"
+id="employmentType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="indeedDesc"></p>
+
+<span
+class="available"
+id="available21"
+></span>
+
+</div>
+
+
+
+<!-- 22 TRUSTPILOT -->
+
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/trustpilot-product-icon.svg"
+alt="Trustpilot"
+>
+
+</div>
+
+<div>
+
+<h3>Trustpilot</h3>
+
+<span
+class="type"
+id="businessType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="trustpilotDesc"></p>
+
+<span
+class="available"
+id="available22"
+></span>
+
+</div>
+
+
+
+<!-- 23 GOOGLE VOICE -->
+
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/googlevoice-product-icon.svg"
+alt="Google Voice"
+>
+
+</div>
+
+<div>
+
+<h3>Google Voice</h3>
+
+<span
+class="type"
+id="communicationType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="googlevoiceDesc"></p>
+
+<span
+class="available"
+id="available23"
+></span>
+
+</div>
+
+<!-- 25 GOOGLE ADS -->
+
+<div class="product-card" data-category="business">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/googleads-product-icon.svg"
+alt="Google Ads"
+>
+
+</div>
+
+<div>
+
+<h3>Google Ads Accounts</h3>
+
+<span
+class="type"
+id="advertisingType1"
+></span>
+
+</div>
+
+</div>
+
+<p id="googleadsDesc"></p>
+
+<span
+class="available"
+id="available25"
+></span>
+
+</div>
+
+
+
+<!-- 26 THREADS -->
+
+<div class="product-card" data-category="social">
+
+<div class="product-head">
+
+<div class="product-icon">
+
+<img
+src="../assets/product/threads-product-icon.svg"
+alt="Threads"
+>
+
+</div>
+
+<div>
+
+<h3>Threads Accounts</h3>
+
+<span
+class="type"
+id="socialType7"
+></span>
+
+</div>
+
+</div>
+
+<p id="threadsDesc"></p>
+
+<span
+class="available"
+id="available26"
+></span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INFORMATION
+========================================================= -->
+
+<section class="info">
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<div class="icon">🏆</div>
+
+<h3 id="oldTitle"></h3>
+
+<p id="oldDesc"></p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="icon">⚡</div>
+
+<h3 id="fastTitle"></h3>
+
+<p id="fastDesc"></p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="icon">🤝</div>
+
+<h3 id="trustedTitle"></h3>
+
+<p id="trustedDesc"></p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+<div class="cta-box">
+
+<h2 id="ctaTitle"></h2>
+<p id="ctaDesc"></p>
+<div class="contact">
+<a
+href="https://wa.me/+8801982887835"
+target="_blank"
+>
+<img src="../assets/whatsapp-social-icon.svg" width="9" height="9">
+WhatsApp
+</a>
+
+<a
+href="http://t.me/RspHelp?direct"
+target="_blank"
+>
+💬 Telegram
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="footer-logo">
+
+<img
+src="../assets/logo.png"
+alt="RSP"
+>
+
+<span>
+Reseller Store Plus
+</span>
+
+</div>
+
+<p id="footerText"></p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   TRANSLATIONS
+========================================================= */
+
+const translations = {
+
+bn:{
+
+badge:"উপলব্ধ পণ্যের তালিকা",
+
+titleMain:"যে আইটেম গুলো",
+
+titleSub:"ResellerStorePlus থেকে নিতে পারবেন! 🛍️🛒",
+
+heroText:
+"আমরা মূলত পার্সোনাল ব্যবহারের জন্য কাস্টমারদেরকে রিয়েল পুরাতন VIP অ্যাকাউন্ট দিয়ে থাকি, আর আপনার সুবিধা অনুযায়ী আপনি যে ধরণের অ্যাকাউন্টই খুঁজছেন—তা নতুন বা পুরাতন, ইতিহাসের সবচেয়ে পুরনো থেকে শুরু করে একদম ফ্রেশ—সবই পাওয়া যায় আমাদের কাছে 🛍️Reseller Store Plus (@RspHelp)-এ Social Media, Business, Entertainment সহ নানা ডিজিটাল আইটেমের বিশাল কালেকশন আছে, যা আপনার চাহিদা মেটাতে পুরোপুরি প্রস্তুত ✅ যা খুঁজছেন, শুধু জানান, বাকিটা আমাদের কাজ।",
+
+back:"← ফিরে যান",
+
+all:"সবগুলো",
+
+social:"সোশ্যাল মিডিয়া",
+
+business:"বিজনেস",
+
+entertainment:"এন্টারটেইনমেন্ট",
+
+dating:"ডেটিং",
+
+socialType:"সোশ্যাল মিডিয়া",
+
+communityType:"কমিউনিটি",
+
+professionalType:"প্রফেশনাল নেটওয়ার্ক",
+
+financialType:"ফাইন্যান্সিয়াল",
+
+ecommerceType:"ই-কমার্স",
+
+entertainmentType:"এন্টারটেইনমেন্ট",
+
+datingType:"ডেটিং",
+
+streamingType:"স্ট্রিমিং",
+
+employmentType:"চাকরি ও কর্মসংস্থান",
+
+businessType:"বিজনেস",
+
+communicationType:"কমিউনিকেশন",
+
+videoType:"ভিডিও প্ল্যাটফর্ম",
+
+advertisingType:"অ্যাডভার্টাইজিং",
+
+available:"উপলব্ধ",
+
+twitterName:"Twitter / X",
+
+twitterDesc:
+"2007–2009 সালের Twitter accounts পাওয়া যাবে। এছাড়াও 2020–2026 সালের accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী অন্যান্য বছরের accounts-ও পাওয়া যাবে।",
+
+discordDesc:
+"2017–2023 সালের Discord accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী অন্যান্য বছরের accounts-ও পাওয়া যাবে।",
+
+linkedinDesc:
+"নতুন ও পুরাতন LinkedIn accounts পাওয়া যাবে। নির্দিষ্ট year অথবা প্রয়োজন অনুযায়ী accounts পাওয়া যাবে।",
+
+facebookName:"Facebook VIP Accounts",
+
+facebookDesc:
+"2007–2009 সালের Facebook VIP accounts পাওয়া যাবে। এছাড়াও 2010–2026 সালের accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী অন্যান্য বছরের accounts-ও পাওয়া যাবে।",
+
+instagramDesc:
+"2013, 2014, 2015, 2016, 2020 ও 2021 সালের Instagram accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী অন্যান্য বছরের accounts-ও পাওয়া যাবে।",
+
+binanceDesc:
+"Binance Verified accounts পাওয়া যাবে। বিভিন্ন ধরনের available options ও requirements সম্পর্কে জানতে আমাদের সাথে যোগাযোগ করুন।",
+
+cashappDesc:
+"নতুন ও পুরাতন Cash App accounts/items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+amazonDesc:
+"নতুন ও পুরাতন Amazon-related items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+netflixDesc:
+"নতুন ও পুরাতন Netflix-related items পাওয়া যাবে। বিভিন্ন available options সম্পর্কে জানতে যোগাযোগ করুন।",
+
+spotifyDesc:
+"নতুন ও পুরাতন Spotify-related items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+walmartDesc:
+"নতুন ও পুরাতন Walmart-related items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+meetmeDesc:
+"নতুন ও পুরাতন MeetMe Dating accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+eharmonyDesc:
+"নতুন ও পুরাতন eHarmony Dating accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+bumbleDesc:
+"নতুন ও পুরাতন Bumble Dating accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+quoraDesc:
+"নতুন ও পুরাতন Quora accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+twitchDesc:
+"নতুন ও পুরাতন Twitch accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+redditDesc:
+"নতুন ও পুরাতন Reddit accounts পাওয়া যাবে। বিভিন্ন ধরনের accounts পাওয়া যাবে।",
+
+blueskyDesc:
+"নতুন ও পুরাতন Bluesky accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+truthDesc:
+"নতুন ও পুরাতন Truth Social accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+tiktokDesc:
+"নতুন ও পুরাতন TikTok accounts পাওয়া যাবে। বিভিন্ন ধরনের accounts এবং প্রয়োজনীয় options পাওয়া যাবে।",
+
+indeedDesc:
+"নতুন ও পুরাতন Indeed-related items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+trustpilotDesc:
+"নতুন ও পুরাতন Trustpilot-related items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+googlevoiceDesc:
+"নতুন ও পুরাতন Google Voice items পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+youtubeName:"YouTube Channels",
+
+youtubeDesc:
+"নতুন ও পুরাতন YouTube Channels পাওয়া যাবে। বিভিন্ন ধরনের channels এবং প্রয়োজনীয় options পাওয়া যাবে।",
+
+googleadsDesc:
+"নতুন ও পুরাতন Google Ads Accounts পাওয়া যাবে। বিভিন্ন requirements অনুযায়ী options পাওয়া যাবে।",
+
+threadsDesc:
+"নতুন ও পুরাতন Threads Accounts পাওয়া যাবে। প্রয়োজন অনুযায়ী বিভিন্ন options পাওয়া যাবে।",
+
+oldTitle:"পুরাতন ও নতুন আইটেম",
+
+oldDesc:
+"ইতিহাসের সবচেয়ে পুরাতন items থেকে শুরু করে নতুন products পর্যন্ত বিভিন্ন ধরনের items আমাদের কাছে পাওয়া যাবে।",
+
+fastTitle:"দ্রুত ডেলিভারি",
+
+fastDesc:
+"Available stock অনুযায়ী দ্রুত delivery দেওয়ার চেষ্টা করা হয়।",
+
+trustedTitle:"বিশ্বস্ত সার্ভিস",
+
+trustedDesc:
+"আমরা organized, professional এবং transparent service দেওয়ার চেষ্টা করি।",
+
+ctaTitle:"কি খুঁজছেন?",
+
+ctaDesc:
+"আপনার প্রয়োজনীয় item এই তালিকায় না থাকলেও আমাদের সাথে যোগাযোগ করুন। নতুন, পুরাতন অথবা নির্দিষ্ট বছরের কোনো item প্রয়োজন হলে বর্তমান availability সম্পর্কে সরাসরি জানতে পারবেন।",
+
+footer:
+"© 2025-26 Reseller Store Plus (@RspHelp) • Digital Marketplace • Trusted Service"
+
+},
+
+
+en:{
+
+badge:"Available Items",
+
+titleMain:"More Items",
+
+titleSub:"from Reseller Store Plus",
+
+heroText:
+"Reseller Store Plus (@RspHelp) offers Social Media, Business, Entertainment, Dating and various Digital Items. Both new and old items are available, from historically old items to newer products according to your requirements.",
+
+back:"← Back",
+
+all:"All",
+
+social:"Social Media",
+
+business:"Business",
+
+entertainment:"Entertainment",
+
+dating:"Dating",
+
+socialType:"Social Media",
+
+communityType:"Community",
+
+professionalType:"Professional Network",
+
+financialType:"Financial",
+
+ecommerceType:"E-commerce",
+
+entertainmentType:"Entertainment",
+
+datingType:"Dating",
+
+streamingType:"Streaming",
+
+employmentType:"Employment",
+
+businessType:"Business",
+
+communicationType:"Communication",
+
+videoType:"Video Platform",
+
+advertisingType:"Advertising",
+
+available:"Available",
+
+twitterName:"Twitter / X",
+
+twitterDesc:
+"Twitter accounts from 2007–2009 are available. Accounts from 2020–2026 are also available. Other years are available according to your requirements.",
+
+discordDesc:
+"Discord accounts from 2017–2023 are available. Other years are also available according to your requirements.",
+
+linkedinDesc:
+"New and old LinkedIn accounts are available. Specific years and other requirements are available.",
+
+facebookName:"Facebook VIP Accounts",
+
+facebookDesc:
+"Facebook VIP accounts from 2007–2009 are available. Accounts from 2010–2026 are also available. Other years are available according to your requirements.",
+
+instagramDesc:
+"Instagram accounts from 2013, 2014, 2015, 2016, 2020 and 2021 are available. Other years are also available according to your requirements.",
+
+binanceDesc:
+"Binance Verified accounts are available. Contact us for available options and requirements.",
+
+cashappDesc:
+"New and old Cash App accounts/items are available with different options according to requirements.",
+
+amazonDesc:
+"New and old Amazon-related items are available with different options according to requirements.",
+
+netflixDesc:
+"New and old Netflix-related items are available. Contact us for available options.",
+
+spotifyDesc:
+"New and old Spotify-related items are available with different options according to requirements.",
+
+walmartDesc:
+"New and old Walmart-related items are available with different options according to requirements.",
+
+meetmeDesc:
+"New and old MeetMe Dating accounts are available with different options according to requirements.",
+
+eharmonyDesc:
+"New and old eHarmony Dating accounts are available with different options according to requirements.",
+
+bumbleDesc:
+"New and old Bumble Dating accounts are available with different options according to requirements.",
+
+quoraDesc:
+"New and old Quora accounts are available with different options according to requirements.",
+
+twitchDesc:
+"New and old Twitch accounts are available with different options according to requirements.",
+
+redditDesc:
+"New and old Reddit accounts are available in different options.",
+
+blueskyDesc:
+"New and old Bluesky accounts are available with different options according to requirements.",
+
+truthDesc:
+"New and old Truth Social accounts are available with different options according to requirements.",
+
+tiktokDesc:
+"New and old TikTok accounts are available with different account options according to requirements.",
+
+indeedDesc:
+"New and old Indeed-related items are available with different options according to requirements.",
+
+trustpilotDesc:
+"New and old Trustpilot-related items are available with different options according to requirements.",
+
+googlevoiceDesc:
+"New and old Google Voice items are available with different options according to requirements.",
+
+youtubeName:"YouTube Channels",
+
+youtubeDesc:
+"New and old YouTube Channels are available with different channel options according to requirements.",
+
+googleadsDesc:
+"New and old Google Ads Accounts are available with different options according to requirements.",
+
+threadsDesc:
+"New and old Threads Accounts are available with different options according to requirements.",
+
+oldTitle:"Old & New Items",
+
+oldDesc:
+"From historically old items to newer products, a wide range of items is available at Reseller Store Plus.",
+
+fastTitle:"Fast Delivery",
+
+fastDesc:
+"We aim to provide fast delivery depending on available stock.",
+
+trustedTitle:"Trusted Service",
+
+trustedDesc:
+"We aim to provide an organized, professional and transparent service.",
+
+ctaTitle:"Looking for Something?",
+
+ctaDesc:
+"Even if your required item is not listed here, feel free to contact us. If you need a new, old or specific-year item, ask us about current availability.",
+
+footer:
+"© 2026 Reseller Store Plus (@RspHelp) • Digital Marketplace • Trusted Service"
+
+},
+
+
+ur:{
+
+badge:"دستیاب اشیاء",
+
+titleMain:"مزید اشیاء",
+
+titleSub:"Reseller Store Plus سے",
+
+heroText:
+"Reseller Store Plus (@RspHelp) پر Social Media، Business، Entertainment، Dating اور مختلف Digital Items دستیاب ہیں۔ نئی اور پرانی دونوں قسم کی اشیاء دستیاب ہیں، تاریخی طور پر پرانی اشیاء سے لے کر نئی اشیاء تک، آپ کی ضرورت کے مطابق۔",
+
+back:"← واپس",
+
+all:"تمام",
+
+social:"سوشل میڈیا",
+
+business:"بزنس",
+
+entertainment:"انٹرٹینمنٹ",
+
+dating:"ڈیٹنگ",
+
+socialType:"سوشل میڈیا",
+
+communityType:"کمیونٹی",
+
+professionalType:"پروفیشنل نیٹ ورک",
+
+financialType:"فنانشل",
+
+ecommerceType:"ای کامرس",
+
+entertainmentType:"انٹرٹینمنٹ",
+
+datingType:"ڈیٹنگ",
+
+streamingType:"اسٹریمنگ",
+
+employmentType:"روزگار",
+
+businessType:"بزنس",
+
+communicationType:"کمیونیکیشن",
+
+videoType:"ویڈیو پلیٹ فارم",
+
+advertisingType:"اشتہارات",
+
+available:"دستیاب",
+
+twitterName:"Twitter / X",
+
+twitterDesc:
+"2007–2009 کے Twitter accounts دستیاب ہیں۔ 2020–2026 کے accounts بھی دستیاب ہیں۔ دیگر سالوں کے accounts بھی آپ کی ضرورت کے مطابق دستیاب ہیں۔",
+
+discordDesc:
+"2017–2023 کے Discord accounts دستیاب ہیں۔ دیگر سالوں کے accounts بھی آپ کی ضرورت کے مطابق دستیاب ہیں۔",
+
+linkedinDesc:
+"نئے اور پرانے LinkedIn accounts دستیاب ہیں۔ مخصوص سال اور دیگر ضروریات کے مطابق accounts دستیاب ہیں۔",
+
+facebookName:"Facebook VIP Accounts",
+
+facebookDesc:
+"2007–2009 کے Facebook VIP accounts دستیاب ہیں۔ 2010–2026 کے accounts بھی دستیاب ہیں۔ دیگر سالوں کے accounts بھی ضرورت کے مطابق دستیاب ہیں۔",
+
+instagramDesc:
+"2013، 2014، 2015، 2016، 2020 اور 2021 کے Instagram accounts دستیاب ہیں۔ دیگر سالوں کے accounts بھی ضرورت کے مطابق دستیاب ہیں۔",
+
+binanceDesc:
+"Binance Verified accounts دستیاب ہیں۔ دستیاب options اور requirements کے لیے ہم سے رابطہ کریں۔",
+
+cashappDesc:
+"نئے اور پرانے Cash App accounts/items مختلف options کے ساتھ دستیاب ہیں۔",
+
+amazonDesc:
+"نئے اور پرانے Amazon-related items مختلف options کے ساتھ دستیاب ہیں۔",
+
+netflixDesc:
+"نئے اور پرانے Netflix-related items دستیاب ہیں۔ دستیاب options کے لیے ہم سے رابطہ کریں۔",
+
+spotifyDesc:
+"نئے اور پرانے Spotify-related items مختلف options کے ساتھ دستیاب ہیں۔",
+
+walmartDesc:
+"نئے اور پرانے Walmart-related items مختلف options کے ساتھ دستیاب ہیں۔",
+
+meetmeDesc:
+"نئے اور پرانے MeetMe Dating accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+eharmonyDesc:
+"نئے اور پرانے eHarmony Dating accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+bumbleDesc:
+"نئے اور پرانے Bumble Dating accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+quoraDesc:
+"نئے اور پرانے Quora accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+twitchDesc:
+"نئے اور پرانے Twitch accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+redditDesc:
+"نئے اور پرانے Reddit accounts مختلف options میں دستیاب ہیں۔",
+
+blueskyDesc:
+"نئے اور پرانے Bluesky accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+truthDesc:
+"نئے اور پرانے Truth Social accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+tiktokDesc:
+"نئے اور پرانے TikTok accounts مختلف account options کے ساتھ دستیاب ہیں۔",
+
+indeedDesc:
+"نئے اور پرانے Indeed-related items مختلف options کے ساتھ دستیاب ہیں۔",
+
+trustpilotDesc:
+"نئے اور پرانے Trustpilot-related items مختلف options کے ساتھ دستیاب ہیں۔",
+
+googlevoiceDesc:
+"نئے اور پرانے Google Voice items مختلف options کے ساتھ دستیاب ہیں۔",
+
+youtubeName:"YouTube Channels",
+
+youtubeDesc:
+"নئے اور پرانے YouTube Channels مختلف channel options کے ساتھ دستیاب ہیں۔",
+
+googleadsDesc:
+"نئے اور پرانے Google Ads Accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+threadsDesc:
+"نئے اور پرانے Threads Accounts مختلف options کے ساتھ دستیاب ہیں۔",
+
+oldTitle:"پرانی اور نئی اشیاء",
+
+oldDesc:
+"تاریخی طور پر پرانی اشیاء سے لے کر نئی مصنوعات تک مختلف قسم کی items Reseller Store Plus پر دستیاب ہیں۔",
+
+fastTitle:"تیز ڈیلیوری",
+
+fastDesc:
+"دستیاب stock کے مطابق تیز delivery فراہم کرنے کی کوشش کی جاتی ہے۔",
+
+trustedTitle:"قابل اعتماد سروس",
+
+trustedDesc:
+"ہم منظم، professional اور transparent service فراہم کرنے کی کوشش کرتے ہیں۔",
+
+ctaTitle:"کچھ تلاش کر رہے ہیں؟",
+
+ctaDesc:
+"اگر آپ کی مطلوبہ item اس فہرست میں موجود نہیں ہے تب بھی ہم سے رابطہ کریں۔ نئی، پرانی یا کسی مخصوص سال کی item کے لیے موجودہ availability کے بارے میں پوچھ سکتے ہیں۔",
+
+footer:
+"© 2026 Reseller Store Plus (@RspHelp) • Digital Marketplace • Trusted Service"
+
+}
+
+};
+
+
+/* =========================================================
+   ELEMENT MAP
+========================================================= */
+
+const ids = {
+
+badgeText:"badge",
+
+titleMain:"titleMain",
+
+titleSub:"titleSub",
+
+heroText:"heroText",
+
+backBtn:"back",
+
+filterAll:"all",
+
+filterSocial:"social",
+
+filterBusiness:"business",
+
+filterEntertainment:"entertainment",
+
+filterDating:"dating",
+
+twitterName:"twitterName",
+
+twitterDesc:"twitterDesc",
+
+discordDesc:"discordDesc",
+
+linkedinDesc:"linkedinDesc",
+
+facebookName:"facebookName",
+
+facebookDesc:"facebookDesc",
+
+instagramDesc:"instagramDesc",
+
+binanceDesc:"binanceDesc",
+
+cashappDesc:"cashappDesc",
+
+amazonDesc:"amazonDesc",
+
+netflixDesc:"netflixDesc",
+
+spotifyDesc:"spotifyDesc",
+
+walmartDesc:"walmartDesc",
+
+meetmeDesc:"meetmeDesc",
+
+eharmonyDesc:"eharmonyDesc",
+
+bumbleDesc:"bumbleDesc",
+
+quoraDesc:"quoraDesc",
+
+twitchDesc:"twitchDesc",
+
+redditDesc:"redditDesc",
+
+blueskyDesc:"blueskyDesc",
+
+truthDesc:"truthDesc",
+
+tiktokDesc:"tiktokDesc",
+
+indeedDesc:"indeedDesc",
+
+trustpilotDesc:"trustpilotDesc",
+
+googlevoiceDesc:"googlevoiceDesc",
+
+youtubeName:"youtubeName",
+
+youtubeDesc:"youtubeDesc",
+
+googleadsDesc:"googleadsDesc",
+
+threadsDesc:"threadsDesc",
+
+oldTitle:"oldTitle",
+
+oldDesc:"oldDesc",
+
+fastTitle:"fastTitle",
+
+fastDesc:"fastDesc",
+
+trustedTitle:"trustedTitle",
+
+trustedDesc:"trustedDesc",
+
+ctaTitle:"ctaTitle",
+
+ctaDesc:"ctaDesc",
+
+footerText:"footer"
+
+};
+
+
+/* =========================================================
+   CATEGORY LABELS
+========================================================= */
+
+const typeIds = {
+
+socialType1:"socialType",
+socialType2:"socialType",
+socialType3:"socialType",
+socialType4:"socialType",
+socialType5:"socialType",
+socialType6:"socialType",
+socialType7:"socialType",
+
+communityType1:"communityType",
+communityType2:"communityType",
+communityType3:"communityType",
+
+professionalType1:"professionalType",
+
+financialType1:"financialType",
+financialType2:"financialType",
+
+ecommerceType1:"ecommerceType",
+ecommerceType2:"ecommerceType",
+
+entertainmentType1:"entertainmentType",
+entertainmentType2:"entertainmentType",
+
+datingType1:"datingType",
+datingType2:"datingType",
+datingType3:"datingType",
+
+streamingType1:"streamingType",
+
+employmentType1:"employmentType",
+
+businessType1:"businessType",
+
+communicationType1:"communicationType",
+
+videoType1:"videoType",
+
+advertisingType1:"advertisingType"
+
+};
+
+
+/* =========================================================
+   AVAILABLE LABELS
+========================================================= */
+
+for(let i=1;i<=26;i++){
+
+    ids["available"+i] = "available";
+
+}
+
+
+/* =========================================================
+   APPLY LANGUAGE
+========================================================= */
+
+let currentLang =
+localStorage.getItem("rsp_lang") || "bn";
+
+
+function applyLanguage(){
+
+    const t =
+        translations[currentLang];
+
+
+    Object.keys(ids).forEach(function(elementId){
+
+        const key =
+            ids[elementId];
+
+        const element =
+            document.getElementById(elementId);
+
+        if(element && t[key] !== undefined){
+
+            element.textContent =
+                t[key];
+
+        }
+
+    });
+
+
+    Object.keys(typeIds).forEach(function(elementId){
+
+        const key =
+            typeIds[elementId];
+
+        const element =
+            document.getElementById(elementId);
+
+        if(element && t[key] !== undefined){
+
+            element.textContent =
+                t[key];
+
+        }
+
+    });
+
+
+    if(currentLang === "bn"){
+
+        langBtn.textContent = "বাংলা";
+
+        document.body.classList.remove("urdu");
+
+        document.documentElement.lang = "bn";
+
+    }
+
+    else if(currentLang === "en"){
+
+        langBtn.textContent = "EN";
+
+        document.body.classList.remove("urdu");
+
+        document.documentElement.lang = "en";
+
+    }
+
+    else{
+
+        langBtn.textContent = "اردو";
+
+        document.body.classList.add("urdu");
+
+        document.documentElement.lang = "ur";
+
+    }
+
+}
+
+
+/* =========================================================
+   LANGUAGE BUTTON
+========================================================= */
+
+const langBtn =
+document.getElementById("langBtn");
+
+
+langBtn.addEventListener(
+    "click",
+    function(){
+
+        if(currentLang === "bn"){
+
+            currentLang = "en";
+
+        }
+
+        else if(currentLang === "en"){
+
+            currentLang = "ur";
+
+        }
+
+        else{
+
+            currentLang = "bn";
+
+        }
+
+
+        localStorage.setItem(
+            "rsp_lang",
+            currentLang
+        );
+
+
+        applyLanguage();
+
+    }
+);
+
+
+applyLanguage();
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+const themeBtn =
+document.getElementById("themeBtn");
+
+
+function setTheme(theme){
+
+    if(theme === "dark"){
+
+        document.body.classList.add("dark");
+
+        themeBtn.textContent = "☀";
+
+    }
+
+    else{
+
+        document.body.classList.remove("dark");
+
+        themeBtn.textContent = "☾";
+
+    }
+
+
+    localStorage.setItem(
+        "rsp_theme",
+        theme
+    );
+
+}
+
+
+const savedTheme =
+localStorage.getItem("rsp_theme") || "light";
+
+
+setTheme(savedTheme);
+
+
+themeBtn.addEventListener(
+    "click",
+    function(){
+
+        const isDark =
+            document.body.classList.contains("dark");
+
+        setTheme(
+            isDark ? "light" : "dark"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+const filterButtons =
+document.querySelectorAll(".filter");
+
+const cards =
+document.querySelectorAll(".product-card");
+
+
+filterButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            filterButtons.forEach(function(btn){
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            const filter =
+                button.dataset.filter;
+
+
+            cards.forEach(function(card){
+
+                if(
+                    filter === "all" ||
+                    card.dataset.category === filter
+                ){
+
+                    card.style.display = "";
+
+                }
+
+                else{
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
