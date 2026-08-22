@@ -1,0 +1,3982 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Donate & Support RSP Humanity</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --bg:#f5f7fb;
+    --bg2:#eef2f7;
+
+    --card:#ffffff;
+    --card2:#f8fafc;
+
+    --text:#172033;
+    --text2:#536075;
+    --muted:#7d8797;
+
+    --border:#dfe5ed;
+
+    --accent:#6252e8;
+    --accent2:#5143d8;
+
+    --green:#18a86b;
+
+    --danger:#d9534f;
+
+    --shadow:
+    0 15px 45px rgba(15,23,42,.08);
+}
+
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+body.dark{
+
+    --bg:#101722;
+    --bg2:#151e2c;
+
+    --card:#1b2636;
+    --card2:#202c3e;
+
+    --text:#f5f7fb;
+    --text2:#c4cedc;
+    --muted:#929eaf;
+
+    --border:#344256;
+
+    --accent:#8b7cff;
+    --accent2:#7767ff;
+
+    --green:#45d58a;
+
+    --danger:#ff7672;
+
+    --shadow:
+    0 15px 45px rgba(0,0,0,.28);
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    font-family:
+    Arial,
+    "Noto Sans Bengali",
+    sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+    transition:
+    background .25s,
+    color .25s;
+}
+
+body.rtl{
+
+    direction:rtl;
+
+    font-family:
+    Arial,
+    "Noto Naskh Arabic",
+    "Noto Nastaliq Urdu",
+    sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+
+    width:min(1080px,92%);
+
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.94);
+
+    border-bottom:
+    1px solid var(--border);
+
+    backdrop-filter:blur(18px);
+}
+
+body.dark header{
+
+    background:rgba(16,23,34,.94);
+}
+
+.nav{
+
+    min-height:74px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+
+/* BRAND */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    flex-shrink:0;
+}
+
+.brand img{
+
+    width:42px;
+    height:42px;
+
+    object-fit:contain;
+}
+
+.brand-name{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:800;
+}
+
+.brand-user{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:8px;
+}
+
+
+/* MENU */
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+}
+
+.menu a{
+
+    color:var(--text2);
+
+    font-size:10px;
+
+    transition:.2s;
+}
+
+.menu a:hover,
+.menu a.active{
+
+    color:var(--accent);
+}
+
+
+/* NAV RIGHT */
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+}
+
+
+/* LANGUAGE */
+
+.languages{
+
+    display:flex;
+
+    padding:3px;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--card2);
+
+    border-radius:8px;
+}
+
+.lang{
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    cursor:pointer;
+
+    font-size:8px;
+
+    padding:5px 7px;
+
+    border-radius:5px;
+}
+
+.lang.active{
+
+    background:var(--accent);
+
+    color:#fff;
+}
+
+
+/* THEME */
+
+.theme-btn,
+.mobile-btn{
+
+    width:32px;
+    height:32px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:8px;
+
+    background:var(--card2);
+
+    color:var(--text);
+
+    cursor:pointer;
+}
+
+.mobile-btn{
+    display:none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    padding:155px 0 90px;
+
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at 50% 0,
+        rgba(98,82,232,.18),
+        transparent 43%
+    );
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:6px 13px;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:30px;
+
+    color:var(--text2);
+
+    font-size:9px;
+
+    margin-bottom:20px;
+
+    box-shadow:var(--shadow);
+}
+
+.dot{
+
+    width:7px;
+    height:7px;
+
+    background:var(--green);
+
+    border-radius:50%;
+}
+
+.hero h1{
+
+    font-size:
+    clamp(38px,7vw,70px);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+}
+
+.hero h1 .purple{
+
+    color:var(--accent);
+}
+
+.humanity-title{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+}
+
+
+/* =====================================================
+   RSP HUMANITY HERO LOGO
+===================================================== */
+
+.hero-logo-link{
+
+    display:inline-flex;
+
+    position:relative;
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+    outline:none;
+
+    transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.hero-humanity-logo{
+
+    width:58px;
+    height:58px;
+
+    object-fit:contain;
+
+    display:block;
+
+    filter:
+    drop-shadow(
+        0 5px 12px rgba(0,0,0,.12)
+    );
+
+    transition:
+    transform .35s ease,
+    filter .35s ease;
+}
+
+
+/* GLOW */
+
+.hero-logo-link::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-7px;
+
+    border-radius:50%;
+
+    border:
+    2px solid transparent;
+
+    transition:
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+/* HOVER EFFECT */
+
+.hero-logo-link:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.05);
+}
+
+.hero-logo-link:hover
+.hero-humanity-logo{
+
+    transform:
+    rotate(-5deg)
+    scale(1.08);
+
+    filter:
+    drop-shadow(
+        0 8px 20px rgba(98,82,232,.35)
+    );
+}
+
+.hero-logo-link:hover::before{
+
+    border-color:
+    rgba(98,82,232,.35);
+
+    box-shadow:
+    0 0 0 7px rgba(98,82,232,.06),
+    0 0 25px rgba(98,82,232,.18);
+}
+
+
+/* CLICK EFFECT */
+
+.hero-logo-link:active{
+
+    transform:
+    scale(.92);
+}
+
+
+/* =====================================================
+   LOGO LIGHTBOX
+===================================================== */
+
+.logo-lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:3000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px;
+
+    background:
+    rgba(0,0,0,.78);
+
+    backdrop-filter:
+    blur(8px);
+}
+
+.logo-lightbox.show{
+
+    display:flex;
+}
+
+.logo-lightbox img{
+
+    width:min(330px,75vw);
+
+    height:min(330px,75vw);
+
+    object-fit:contain;
+
+    animation:
+    logoPop .35s ease;
+}
+
+@keyframes logoPop{
+
+    from{
+        opacity:0;
+        transform:scale(.65) rotate(-8deg);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+.logo-close{
+
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    width:38px;
+    height:38px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
+.hero-subtitle{
+
+    margin:16px auto 0;
+
+    font-size:17px;
+
+    font-weight:700;
+}
+
+.hero-description{
+
+    max-width:670px;
+
+    margin:10px auto 0;
+
+    color:var(--text2);
+
+    font-size:11px;
+}
+
+.hero-buttons{
+
+    margin-top:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+
+    padding:10px 18px;
+
+    border-radius:9px;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    border:
+    1px solid var(--border);
+}
+
+.hero-btn.primary{
+
+    background:var(--accent);
+
+    color:#fff;
+
+    border-color:var(--accent);
+}
+
+.hero-btn.secondary{
+
+    background:var(--card);
+
+    color:var(--text);
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+section{
+    padding:82px 0;
+}
+
+.section-head{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.section-head small{
+
+    color:var(--accent);
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+}
+
+.section-head h2{
+
+    font-size:31px;
+
+    margin-top:6px;
+}
+
+.section-head p{
+
+    max-width:650px;
+
+    margin:8px auto 0;
+
+    color:var(--text2);
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro{
+
+    background:var(--bg2);
+
+    border-top:
+    1px solid var(--border);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.intro-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.intro-box h2{
+
+    font-size:30px;
+
+    margin-bottom:14px;
+}
+
+.intro-box h2 span{
+
+    color:var(--accent);
+}
+
+.intro-box p{
+
+    color:var(--text2);
+
+    font-size:11px;
+
+    margin-bottom:11px;
+}
+
+.tagline{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:8px 16px;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--card);
+
+    border-radius:30px;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   RSP HUMANITY PROFILE
+===================================================== */
+
+.humanity-profile-section{
+
+    padding:20px 0 80px;
+}
+
+.humanity-profile-card{
+
+    width:min(520px,100%);
+
+    margin:auto;
+
+    padding:30px 25px 25px;
+
+    text-align:center;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.humanity-profile-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--accent),
+        #8b7cff,
+        var(--accent)
+    );
+}
+
+.humanity-profile-logo{
+
+    width:82px;
+    height:82px;
+
+    object-fit:contain;
+
+    margin:3px auto 13px;
+
+    display:block;
+}
+
+.humanity-profile-name{
+
+    font-size:20px;
+
+    font-weight:800;
+
+    line-height:1.2;
+}
+
+.humanity-profile-username{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.humanity-profile-description{
+
+    max-width:400px;
+
+    margin:12px auto 18px;
+
+    color:var(--text2);
+
+    font-size:10px;
+
+    line-height:1.7;
+}
+
+.humanity-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+}
+
+.humanity-social a{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:var(--card2);
+
+    border:
+    1px solid var(--border);
+
+    color:var(--text2);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.humanity-social a:hover{
+
+    transform:translateY(-3px);
+
+    color:var(--accent);
+
+    border-color:var(--accent);
+}
+
+.humanity-follow{
+
+    margin-top:14px;
+
+    color:var(--muted);
+
+    font-size:8px;
+}
+
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.mission-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+}
+
+.mission-card{
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:27px;
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+}
+
+.mission-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--accent);
+}
+
+.mission-icon{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--card2);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:11px;
+
+    font-size:20px;
+
+    margin-bottom:16px;
+}
+
+.mission-card h3{
+
+    font-size:15px;
+
+    margin-bottom:6px;
+}
+
+.mission-card p{
+
+    color:var(--text2);
+
+    font-size:10px;
+}
+
+
+/* =====================================================
+   SHOP SUPPORT
+===================================================== */
+
+.shop{
+
+    background:var(--bg2);
+
+    border-top:
+    1px solid var(--border);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.shop-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+}
+
+.shop-icon{
+
+    width:58px;
+    height:58px;
+
+    margin:0 auto 17px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    font-size:24px;
+}
+
+.shop-box h2{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.shop-box p{
+
+    color:var(--text2);
+
+    font-size:11px;
+
+    max-width:700px;
+
+    margin:0 auto 12px;
+}
+
+.flow{
+
+    margin:25px auto 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+}
+
+.flow-item{
+
+    padding:10px 14px;
+
+    background:var(--card2);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:9px;
+
+    font-size:9px;
+
+    font-weight:bold;
+}
+
+.arrow{
+
+    color:var(--accent);
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   CURRENT BALANCE
+===================================================== */
+
+.balance-section{
+
+    padding:70px 0;
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--bg),
+        var(--bg2)
+    );
+}
+
+.balance-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.balance-top{
+
+    padding:30px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(98,82,232,.13),
+        transparent
+    );
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.balance-label{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+}
+
+.balance-number{
+
+    margin-top:4px;
+
+    font-size:43px;
+
+    font-weight:900;
+
+    color:var(--accent);
+
+    line-height:1.2;
+}
+
+
+/* FIXED STATUS */
+
+.balance-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:9px;
+
+    padding:6px 11px;
+
+    border-radius:20px;
+
+    background:rgba(24,168,107,.09);
+
+    color:var(--green);
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    line-height:1.2;
+}
+
+.balance-status .status-dot{
+
+    display:block;
+
+    width:6px;
+    height:6px;
+
+    min-width:6px;
+
+    background:var(--green);
+
+    border-radius:50%;
+}
+
+.balance-status .status-text{
+
+    display:block;
+
+    color:var(--green);
+
+    white-space:nowrap;
+}
+
+
+.balance-stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+}
+
+.balance-stat{
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.balance-stat + .balance-stat{
+
+    border-left:
+    1px solid var(--border);
+}
+
+body.rtl .balance-stat + .balance-stat{
+
+    border-left:0;
+
+    border-right:
+    1px solid var(--border);
+}
+
+.balance-stat-label{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    margin-bottom:4px;
+}
+
+.balance-stat-value{
+
+    font-size:22px;
+
+    font-weight:800;
+}
+
+.balance-income{
+
+    color:var(--green);
+}
+
+.balance-expense{
+
+    color:var(--danger);
+}
+
+.balance-note{
+
+    padding:15px 22px;
+
+    border-top:
+    1px solid var(--border);
+
+    background:var(--card2);
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+
+/* =====================================================
+   DONATION
+===================================================== */
+
+.donation{
+
+    text-align:center;
+}
+
+.donation-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:16px;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.donation-card{
+
+    text-align:left;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:27px;
+
+    box-shadow:var(--shadow);
+}
+
+body.rtl .donation-card{
+    text-align:right;
+}
+
+.donation-icon{
+
+    width:47px;
+    height:47px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--card2);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:11px;
+
+    margin-bottom:14px;
+}
+
+
+/* USDT */
+
+.usdt-logo{
+
+    width:29px;
+    height:29px;
+
+    border-radius:50%;
+
+    background:#26a17b;
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    font-family:Arial,sans-serif;
+}
+
+
+/* BKASH */
+
+.bkash-logo{
+
+    color:#e2136e;
+
+    font-size:26px;
+
+    font-weight:900;
+
+    line-height:1;
+}
+
+
+/* DONATION CARD */
+
+.donation-card h3{
+
+    font-size:16px;
+
+    margin-bottom:3px;
+}
+
+.donation-card p{
+
+    color:var(--text2);
+
+    font-size:9px;
+
+    margin:5px 0 15px;
+}
+
+
+/* =====================================================
+   BINANCE INFO
+===================================================== */
+
+.binance-info{
+
+    position:relative;
+
+    padding:
+    11px 58px 11px 12px;
+
+    background:var(--card2);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:8px;
+
+    margin-bottom:8px;
+
+    text-align:left;
+}
+
+body.rtl .binance-info{
+
+    padding:
+    11px 12px 11px 58px;
+
+    text-align:right;
+}
+
+.binance-line{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    line-height:1.7;
+}
+
+.binance-line + .binance-line{
+
+    margin-top:3px;
+}
+
+.binance-label{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+    white-space:nowrap;
+}
+
+.binance-value{
+
+    color:var(--text);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+.binance-copy{
+
+    position:absolute;
+
+    top:50%;
+    right:8px;
+
+    transform:translateY(-50%);
+
+    border:0;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    padding:7px 9px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:8px;
+
+    font-weight:bold;
+}
+
+body.rtl .binance-copy{
+
+    right:auto;
+    left:8px;
+}
+
+.binance-copy.copied{
+
+    background:var(--green);
+}
+
+
+/* =====================================================
+   ADDRESS
+===================================================== */
+
+.address-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:8px;
+
+    background:var(--card2);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:8px;
+}
+
+.address{
+
+    flex:1;
+
+    min-width:0;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+    color:var(--text2);
+
+    font-size:8px;
+}
+
+.copy{
+
+    border:0;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    padding:7px 10px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    flex-shrink:0;
+}
+
+.copy.copied{
+
+    background:var(--green);
+}
+
+
+/* =====================================================
+   DONATION INFO
+===================================================== */
+
+.donation-instruction{
+
+    max-width:850px;
+
+    margin:28px auto 0;
+
+    padding:20px 22px;
+
+    text-align:left;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:13px;
+}
+
+body.rtl .donation-instruction{
+    text-align:right;
+}
+
+.donation-instruction h3{
+
+    font-size:14px;
+
+    margin-bottom:8px;
+}
+
+.donation-instruction p{
+
+    color:var(--text2);
+
+    font-size:10px;
+
+    margin:5px 0;
+}
+
+.donation-instruction strong{
+    color:var(--text);
+}
+
+.warning{
+
+    margin-top:13px;
+
+    padding:12px 14px;
+
+    background:rgba(217,83,79,.08);
+
+    border-left:
+    3px solid var(--danger);
+
+    border-radius:7px;
+
+    color:var(--text2);
+
+    font-size:9px;
+}
+
+
+/* =====================================================
+   TRANSPARENCY
+===================================================== */
+
+.transparency{
+
+    background:var(--bg2);
+
+    border-top:
+    1px solid var(--border);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.transparency-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:var(--card);
+
+    border:
+    1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:35px;
+}
+
+.transparency-box h2{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.transparency-box p{
+
+    color:var(--text2);
+
+    font-size:11px;
+}
+
+.note{
+
+    margin-top:18px;
+
+    padding:15px 18px;
+
+    background:var(--card2);
+
+    border-left:
+    3px solid var(--accent);
+
+    border-radius:8px;
+
+    color:var(--text2);
+
+    font-size:9px;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote{
+    text-align:center;
+}
+
+.quote-box{
+
+    max-width:780px;
+
+    margin:auto;
+}
+
+.quote-text{
+
+    font-size:22px;
+
+    line-height:1.5;
+
+    font-weight:700;
+}
+
+.quote-text span{
+    color:var(--accent);
+}
+
+.quote-sub{
+
+    margin-top:13px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social-section{
+
+    padding:30px 0;
+
+    background:var(--bg2);
+
+    border-top:
+    1px solid var(--border);
+}
+
+.social-title{
+
+    text-align:center;
+
+    color:var(--accent);
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    margin-bottom:13px;
+}
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:7px;
+}
+
+.social-icon{
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:
+    1px solid var(--border);
+
+    background:var(--card);
+
+    color:var(--muted);
+
+    border-radius:8px;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.social-icon:hover{
+
+    color:var(--accent);
+
+    border-color:var(--accent);
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    border-top:
+    1px solid var(--border);
+}
+
+.footer{
+
+    min-height:85px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.footer-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.footer-brand img{
+
+    width:32px;
+    height:32px;
+
+    object-fit:contain;
+}
+
+.footer-brand strong{
+
+    display:block;
+
+    font-size:10px;
+}
+
+.footer-brand span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:7px;
+}
+
+.footer p{
+
+    color:var(--muted);
+
+    font-size:8px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px){
+
+    .menu{
+
+        display:none;
+
+        position:absolute;
+
+        top:74px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+        background:var(--card);
+
+        border-bottom:
+        1px solid var(--border);
+    }
+
+    .menu.show{
+        display:flex;
+    }
+
+    .mobile-btn{
+        display:block;
+    }
+
+    .mission-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:600px){
+
+    .brand img{
+
+        width:37px;
+        height:37px;
+    }
+
+    .brand-name{
+        font-size:11px;
+    }
+
+    .brand-user{
+        font-size:7px;
+    }
+
+    .hero{
+
+        padding:125px 0 65px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .humanity-title{
+        gap:8px;
+    }
+
+    .hero-humanity-logo{
+
+        width:45px;
+        height:45px;
+    }
+
+    .hero-subtitle{
+        font-size:14px;
+    }
+
+    .hero-description{
+        font-size:10px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    .mission-grid,
+    .donation-grid{
+        grid-template-columns:1fr;
+    }
+
+    .shop-box,
+    .transparency-box{
+        padding:27px;
+    }
+
+    .quote-text{
+        font-size:18px;
+    }
+
+    .humanity-profile-card{
+        padding:27px 18px 22px;
+    }
+
+    .humanity-profile-logo{
+
+        width:72px;
+        height:72px;
+    }
+
+    .balance-number{
+        font-size:36px;
+    }
+
+    .balance-stat{
+        padding:20px 10px;
+    }
+
+    .balance-stat-value{
+        font-size:19px;
+    }
+
+    .footer{
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        text-align:center;
+
+        padding:22px 0;
+    }
+
+    .binance-info{
+        padding-right:55px;
+    }
+
+    body.rtl .binance-info{
+
+        padding-right:12px;
+
+        padding-left:55px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="container nav">
+
+
+<a href="index.html" class="brand">
+
+<img
+src="../assets/logo.png"
+alt="Reseller Store Plus">
+
+<div>
+
+<span class="brand-name">
+Reseller Store Plus
+</span>
+
+<span class="brand-user">
+@RspHelp
+</span>
+
+</div>
+
+</a>
+
+
+<nav class="menu" id="menu">
+
+<a href="../index.html"
+data-i18n="home">
+рж╣рзЛржо
+</a>
+
+<a href="../index.html#marketplace"
+data-i18n="marketplace">
+ржорж╛рж░рзНржХрзЗржЯржкрзНрж▓рзЗрж╕
+</a>
+
+<a href="../index.html#about"
+data-i18n="about">
+ржЖржорж╛ржжрзЗрж░ рж╕ржорзНржкрж░рзНржХрзЗ
+</a>
+
+<a href="donation.html"
+class="active"
+data-i18n="humanity">
+RSP Humanity
+</a>
+
+<a href="../index.html#contact"
+data-i18n="contact">
+ржпрзЛржЧрж╛ржпрзЛржЧ
+</a>
+
+</nav>
+
+
+<div class="nav-right">
+
+
+<div class="languages">
+
+<button
+class="lang active"
+data-lang="bn">
+ржмрж╛ржВрж▓рж╛
+</button>
+
+<button
+class="lang"
+data-lang="en">
+EN
+</button>
+
+<button
+class="lang"
+data-lang="ur">
+╪з╪▒╪п┘И
+</button>
+
+</div>
+
+
+<button
+class="theme-btn"
+id="themeBtn">
+
+<span id="themeIcon">
+тША
+</span>
+
+</button>
+
+
+<button
+class="mobile-btn"
+id="mobileBtn">
+тШ░
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container">
+
+
+<div class="hero-badge">
+
+<span class="dot"></span>
+
+<span data-i18n="badge">
+RSP-ржПрж░ ржПржХржЯрж┐ ржорж╛ржиржмрж┐ржХ ржЙржжрзНржпрзЛржЧ
+</span>
+
+</div>
+
+
+<h1>
+
+<span class="purple">
+Donate & Support
+</span>
+
+<br>
+
+<span class="humanity-title">
+
+RSP Humanity
+
+
+<!-- CLICKABLE LOGO -->
+
+<a
+href="javascript:void(0)"
+class="hero-logo-link"
+id="heroLogo">
+
+<img
+src="../assets/rsp-humanity-logo.png"
+alt="RSP Humanity"
+class="hero-humanity-logo">
+
+</a>
+
+</span>
+
+</h1>
+
+
+<div
+class="hero-subtitle"
+data-i18n="heroSubtitle">
+
+ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛрж░ ржПржХржЯрж┐ ржЫрзЛржЯрзНржЯ ржЙржжрзНржпрзЛржЧ
+
+</div>
+
+
+<p
+class="hero-description"
+data-i18n="heroDescription">
+
+ржЖржкржирж┐ рж╕рж░рж╛рж╕рж░рж┐ Donation ржХрж░рждрзЗ ржкрж╛рж░рзЗржи ржЕржержмрж╛
+Reseller Store Plus ржерзЗржХрзЗ ржкржгрзНржп ржХрж┐ржирзЗржУ
+RSP Humanity-ржПрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржоржХрзЗ Support ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#donate"
+class="hero-btn primary"
+data-i18n="donateButton">
+Donate Now
+</a>
+
+<a
+href="#support"
+class="hero-btn secondary"
+data-i18n="supportButton">
+ржкржгрзНржп ржХрж┐ржирзЗ Support ржХрж░рзБржи
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOGO LIGHTBOX
+===================================================== -->
+
+<div
+class="logo-lightbox"
+id="logoLightbox">
+
+<button
+class="logo-close"
+id="logoClose">
+├Ч
+</button>
+
+<img
+src="../assets/rsp-humanity-logo.png"
+alt="RSP Humanity Logo">
+
+</div>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro">
+
+<div class="container">
+
+<div class="intro-box">
+
+<h2>
+<span>RSP Humanity</span>
+</h2>
+
+<p data-i18n="intro1">
+ржЖржЬ ржерзЗржХрзЗ ржЖржорж╛ржжрзЗрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржирждрзБржи ржирж╛ржо RSP Humanityред тЭдя╕П
+</p>
+
+<p data-i18n="intro2">
+RSP Humanity рж╣рж▓рзЛ Reseller Store Plus (RSP)-ржПрж░ ржПржХржЯрж┐ ржорж╛ржиржмрж┐ржХ рж╢рж╛ржЦрж╛,
+ржпрж╛рж░ ржорзВрж▓ рж▓ржХрзНрж╖рзНржп ржмрзНржпржмрж╕рж╛рж░ ржкрж╛рж╢рж╛ржкрж╛рж╢рж┐ ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░
+ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ ржПржмржВ рж╕ржорж╛ржЬрзЗрж░ ржЬржирзНржп ржЗрждрж┐ржмрж╛ржЪржХ ржХрж┐ржЫрзБ ржХрж░рж╛ред
+</p>
+
+<p data-i18n="intro3">
+ржЖржорж░рж╛ ржмрж┐рж╢рзНржмрж╛рж╕ ржХрж░рж┐, ржПржХржЯрж┐ ржмрзНржпржмрж╕рж╛ рж╢рзБржзрзБ рж▓рж╛ржнрзЗрж░ ржЬржирзНржп ржирзЯред
+ржмрзНржпржмрж╕рж╛рж░ ржорж╛ржзрзНржпржорзЗржУ ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ рж╕ржорзНржнржмред
+</p>
+
+<div class="tagline">
+RSP тАФ Business with Humanity. ЁЯдЭ
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROFILE
+===================================================== -->
+
+<section class="humanity-profile-section">
+
+<div class="container">
+
+<div class="humanity-profile-card">
+
+
+<img
+src="../assets/rsp-humanity-logo.png"
+alt="RSP Humanity"
+class="humanity-profile-logo">
+
+
+<div class="humanity-profile-name">
+RSP Humanity
+</div>
+
+
+<span class="humanity-profile-username">
+A Branch of Reseller Store Plus ┬╖ @RspHelp
+</span>
+
+
+<p
+class="humanity-profile-description"
+data-i18n="profileDescription">
+
+Reseller Store Plus-ржПрж░ ржПржХржЯрж┐ ржорж╛ржиржмрж┐ржХ рж╢рж╛ржЦрж╛ред
+ржмрзНржпржмрж╕рж╛рж░ ржкрж╛рж╢рж╛ржкрж╛рж╢рж┐ ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛржЗ ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржпред
+
+</p>
+
+
+<div class="humanity-social">
+
+<a href="https://facebook.com/RspHumanity" title="Facebook">
+f
+</a>
+
+<a
+href="#"
+target="_blank"
+title="Telegram">
+тЬИ
+</a>
+
+<a href="#" title="Instagram">
+тЧО
+</a>
+
+<a href="#" title="YouTube">
+тЦ╢
+</a>
+
+<a
+href="#"
+target="_blank"
+title="WhatsApp">
+тШО
+</a>
+
+</div>
+
+
+<div
+class="humanity-follow"
+data-i18n="profileFollow">
+
+RSP Humanity-ржПрж░ рж╕ржЩрзНржЧрзЗ ржпрзБржХрзНржд ржерж╛ржХрзБржи тЭдя╕П
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MISSION
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head">
+
+<small data-i18n="missionSmall">
+ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржп
+</small>
+
+<h2 data-i18n="missionTitle">
+ржЖржорж░рж╛ ржХрзА ржХрж░рждрзЗ ржЪрж╛ржЗ
+</h2>
+
+<p data-i18n="missionDesc">
+ржЖржорж╛ржжрзЗрж░ рж╕рж╛ржорж░рзНржерзНржп ржУ рж╕рзБржпрзЛржЧ ржЕржирзБржпрж╛рзЯрзА ржзрзАрж░рзЗ ржзрзАрж░рзЗ
+ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржо ржкрж░рж┐ржЪрж╛рж▓ржирж╛ ржХрж░рж╛ ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржпред
+</p>
+
+</div>
+
+
+<div class="mission-grid">
+
+
+<div class="mission-card">
+
+<div class="mission-icon">
+ЁЯНЪ
+</div>
+
+<h3 data-i18n="foodTitle">
+ржЦрж╛ржмрж╛рж░ рж╕рж╣рж╛рзЯрждрж╛
+</h3>
+
+<p data-i18n="foodText">
+ржХрзНрж╖рзБржзрж╛рж░рзНржд, ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░
+ржЬржирзНржп ржЦрж╛ржмрж╛рж░рзЗрж░ ржмрзНржпржмрж╕рзНржерж╛ ржХрж░рждрзЗ рж╕рж╛рж╣рж╛ржпрзНржп ржХрж░рж╛ред
+</p>
+
+</div>
+
+
+<div class="mission-card">
+
+<div class="mission-icon">
+ЁЯдЭ
+</div>
+
+<h3 data-i18n="humanTitle">
+ржорж╛ржиржмрж┐ржХ рж╕рж╣рж╛рзЯрждрж╛
+</h3>
+
+<p data-i18n="humanText">
+ржкрзНрж░рзЯрзЛржЬржирзЗрж░ рж╕ржорзЯрзЗ ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд
+ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛред
+</p>
+
+</div>
+
+
+<div class="mission-card">
+
+<div class="mission-icon">
+тЭдя╕П
+</div>
+
+<h3 data-i18n="communityTitle">
+ржХржорж┐ржЙржирж┐ржЯрж┐ рж╕рж╛ржкрзЛрж░рзНржЯ
+</h3>
+
+<p data-i18n="communityText">
+ржорж╛ржирзБрж╖ ржУ ржЖржорж╛ржжрзЗрж░ ржХржорж┐ржЙржирж┐ржЯрж┐рж░ ржЬржирзНржп ржЫрзЛржЯ
+ржХрж┐ржирзНрждрзБ ржЕрж░рзНржержмрж╣ ржорж╛ржиржмрж┐ржХ ржЙржжрзНржпрзЛржЧ ржирзЗржУрзЯрж╛ред
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SHOP SUPPORT
+===================================================== -->
+
+<section
+class="shop"
+id="support">
+
+<div class="container">
+
+<div class="shop-box">
+
+
+<div class="shop-icon">
+ЁЯЫТ
+</div>
+
+
+<h2 data-i18n="shopTitle">
+рж╕рж░рж╛рж╕рж░рж┐ Donation ржирж╛ ржХрж░рзЗржУ рж╕рж╛рж╣рж╛ржпрзНржп ржХрж░рзБржи
+</h2>
+
+
+<p data-i18n="shopText1">
+RSP Humanity-ржХрзЗ рж╕рж╛рж╣рж╛ржпрзНржп ржХрж░рждрзЗ ржЖржкржирж╛ржХрзЗ
+ржЕржмрж╢рзНржпржЗ рж╕рж░рж╛рж╕рж░рж┐ Donation ржХрж░рждрзЗ рж╣ржмрзЗтАФржПржоржи ржирзЯред
+</p>
+
+
+<p data-i18n="shopText2">
+ржЖржкржирж╛рж░ ржпржжрж┐ ржХрзЛржирзЛ ржкржгрзНржп ржкрзНрж░рзЯрзЛржЬржи рж╣рзЯ,
+рждрж╛рж╣рж▓рзЗ Reseller Store Plus ржерзЗржХрзЗ ржкржгрзНржпржЯрж┐ ржХрж┐ржирждрзЗ ржкрж╛рж░рзЗржиред
+ржЖржкржирж╛рж░ ржХрзЗржирж╛ржХрж╛ржЯрж╛ RSP Humanity-ржПрж░ ржорж╛ржиржмрж┐ржХ
+ржХрж╛рж░рзНржпржХрзНрж░ржо ржЪрж╛рж▓рж┐рзЯрзЗ ржпрзЗрждрзЗ ржЖржорж╛ржжрзЗрж░ рж╕рж╣ржпрзЛржЧрж┐рждрж╛ ржХрж░рждрзЗ ржкрж╛рж░рзЗред
+</p>
+
+
+<div class="flow">
+
+<div class="flow-item"
+data-i18n="flow1">
+ржЖржкржирж┐ ржкржгрзНржп ржХрж┐ржирж▓рзЗржи
+</div>
+
+<div class="arrow">
+тЖТ
+</div>
+
+<div class="flow-item">
+RSP
+</div>
+
+<div class="arrow">
+тЖТ
+</div>
+
+<div class="flow-item">
+RSP Humanity
+</div>
+
+<div class="arrow">
+тЖТ
+</div>
+
+<div class="flow-item"
+data-i18n="flow4">
+ржПржХржЬржирзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ тЭдя╕П
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CURRENT BALANCE
+===================================================== -->
+
+<section class="balance-section">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<small data-i18n="balanceSmall">
+DONATION TRANSPARENCY
+</small>
+
+<h2 data-i18n="balanceTitle">
+ржмрж░рзНрждржорж╛ржи рж╣рж┐рж╕рж╛ржм
+</h2>
+
+<p data-i18n="balanceDesc">
+RSP Humanity-ржПрж░ ржмрж░рзНрждржорж╛ржи рждрж╣ржмрж┐рж▓рзЗрж░ ржПржХржЯрж┐ рж╕ржВржХрзНрж╖рж┐ржкрзНржд рж╣рж┐рж╕рж╛ржмред
+</p>
+
+</div>
+
+
+<div class="balance-card">
+
+
+<div class="balance-top">
+
+<div
+class="balance-label"
+data-i18n="currentBalance">
+CURRENT BALANCE
+</div>
+
+
+<div class="balance-number">
+$0.201
+</div>
+
+
+<!-- FIXED STATUS -->
+
+<div class="balance-status">
+
+<span class="status-dot"></span>
+
+<span
+class="status-text"
+data-i18n="balanceAvailable">
+ржмрж░рзНрждржорж╛ржирзЗ рж╕ржВрж░ржХрзНрж╖рж┐ржд
+</span>
+
+</div>
+
+</div>
+
+
+
+<div class="balance-stats">
+
+
+<div class="balance-stat">
+
+<span
+class="balance-stat-label"
+data-i18n="totalIncome">
+ржорзЛржЯ ржЖрзЯ
+</span>
+
+<div class="balance-stat-value balance-income">
+$0.201
+</div>
+
+</div>
+
+
+<div class="balance-stat">
+
+<span
+class="balance-stat-label"
+data-i18n="totalExpense">
+ржорзЛржЯ ржмрзНржпрзЯ
+</span>
+
+<div class="balance-stat-value balance-expense">
+$0
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div
+class="balance-note"
+data-i18n="balanceNote">
+
+ЁЯУЭ ржПржЗ рж╣рж┐рж╕рж╛ржм ржирж┐рзЯржорж┐рждржнрж╛ржмрзЗ ржЖржкржбрзЗржЯ ржХрж░рж╛ рж╣рзЯред
+рж╕рж╛ржзрж╛рж░ржгржд ржкрзНрж░рждрж┐ рзм ржорж╛рж╕ ржмрж╛ рзз ржмржЫрж░рзЗ ржПржХржмрж╛рж░
+ржмрж░рзНрждржорж╛ржи Balance, ржорзЛржЯ ржЖрзЯ ржУ ржорзЛржЯ ржмрзНржпрзЯрзЗрж░ рж╣рж┐рж╕рж╛ржм
+ржЖржкржбрзЗржЯ ржХрж░рж╛ рж╣ржмрзЗред
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DONATION
+===================================================== -->
+
+<section
+class="donation"
+id="donate">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<small data-i18n="donationSmall">
+DIRECT DONATION
+</small>
+
+<h2 data-i18n="donationTitle">
+рж╕рж░рж╛рж╕рж░рж┐ Donation ржХрж░рждрзЗ ржЪрж╛ржи?
+</h2>
+
+<p data-i18n="donationDesc">
+ржЖржкржирж┐ ржЪрж╛ржЗрж▓рзЗ рж╕рж░рж╛рж╕рж░рж┐ RSP Humanity-ржХрзЗ
+Donation ржХрж░рзЗржУ ржЖржорж╛ржжрзЗрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗ
+рж╕рж╣ржпрзЛржЧрж┐рждрж╛ ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред
+</p>
+
+</div>
+
+
+<div class="donation-grid">
+
+
+<!-- USDT -->
+
+<div class="donation-card">
+<div class="donation-icon">
+<div class="usdt-logo">
+тВо
+</div>
+</div>
+
+<h3>
+Binance (USDT)
+</h3>
+<p data-i18n="usdtText">
+Binance-ржПрж░ ржорж╛ржзрзНржпржорзЗ USDT-рждрзЗ
+RSP Humanity-ржХрзЗ Donation ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред
+</p>
+
+
+<!-- BINANCE ID + NAME -->
+
+<div class="binance-info">
+
+
+<!-- Binance : ID FIRST -->
+<div class="binance-line">
+<span class="binance-label">
+Binance ID:
+</span>
+<span
+class="binance-value"
+id="binanceId">
+1132659821
+</span>
+</div>
+
+<!-- Binance : NAME SECOND -->
+<div class="binance-line">
+<span class="binance-label">
+Name:
+</span>
+<span class="binance-value">
+mustakin molla
+</span>
+
+</div>
+
+
+<button
+class="binance-copy"
+id="binanceCopy">
+Copy
+</button>
+
+
+</div>
+
+
+<!-- USDT ADDRESS -->
+
+<div class="address-box">
+
+<span class="address">
+YOUR-USDT-WALLET-ADDRESS
+</span>
+
+<button
+class="copy"
+data-copy="YOUR-USDT-WALLET-ADDRESS">
+
+Copy
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- BKASH / NAGAD -->
+
+<div class="donation-card">
+
+
+<div class="donation-icon">
+
+<div class="bkash-logo">
+рз│
+</div>
+
+</div>
+
+
+<h3 data-i18n="bdPaymentTitle">
+ржмрж┐ржХрж╛рж╢ / ржиржЧржж
+</h3>
+
+
+<p data-i18n="bdPaymentText">
+ржмрж╛ржВрж▓рж╛ржжрзЗрж╢ ржерзЗржХрзЗ Donation ржХрж░рждрзЗ
+ржмрж┐ржХрж╛рж╢ ржЕржержмрж╛ ржиржЧржж ржмрзНржпржмрж╣рж╛рж░ ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред
+</p>
+
+
+<div class="address-box">
+
+<span class="address">
++8801982887835
+</span>
+
+<button
+class="copy"
+data-copy="01982887835">
+
+Copy
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- INFORMATION -->
+
+<div class="donation-instruction">
+
+
+<h3 data-i18n="instructionTitle">
+Donation ржХрж░рж╛рж░ ржЖржЧрзЗ ржЧрзБрж░рзБрждрзНржмржкрзВрж░рзНржг рждржерзНржп
+</h3>
+
+
+<p data-i18n="instruction1">
+
+<strong>
+USDT-рждрзЗ Donation ржХрж░рж╛рж░ ржЪрзЗрж╖рзНржЯрж╛ ржХрж░рзБржиред
+</strong>
+
+рж╕ржорзНржнржм рж╣рж▓рзЗ Binance-ржПрж░ ржорж╛ржзрзНржпржорзЗ USDT ржкрж╛ржарж╛ржирзЛ
+ржЖржорж╛ржжрзЗрж░ ржЬржирзНржп рж╕рж╣ржЬред
+
+</p>
+
+
+<p data-i18n="instruction2">
+
+ржЖржкржирж┐ ржмрж╛ржВрж▓рж╛ржжрзЗрж╢ ржерзЗржХрзЗ рж╣рж▓рзЗ ржмрж┐ржХрж╛рж╢/ржиржЧржжрзЗрж░
+ржорж╛ржзрзНржпржорзЗржУ Donation ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред
+
+</p>
+
+
+<p data-i18n="instruction3">
+
+Binance-ржПрж░ ржорж╛ржзрзНржпржорзЗ USDT Donation ржХрж░рж▓рзЗ
+ржЖржкржирж┐ ржЖржкржирж╛рж░ ржЗржЪрзНржЫрж╛ржорждрзЛ amount ржжрж╛ржи ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред
+ржЪрж╛ржЗрж▓рзЗ Donation ржХрж░рж╛рж░ ржЖржЧрзЗ ржЖржорж╛ржжрзЗрж░ рж╕ржЩрзНржЧрзЗ ржХржерж╛ржУ ржмрж▓рждрзЗ ржкрж╛рж░рзЗржиред
+
+</p>
+
+
+<div
+class="warning"
+data-i18n="warning">
+
+тЪая╕П ржмрж┐ржХрж╛рж╢/ржиржЧржжрзЗ ржмрзЬ ржЕржЩрзНржХрзЗрж░ Donation ржХрж░рж╛рж░ ржЖржЧрзЗ
+ржЕржмрж╢рзНржпржЗ ржЖржорж╛ржжрзЗрж░ рж╕ржЩрзНржЧрзЗ ржпрзЛржЧрж╛ржпрзЛржЧ ржХрж░рзЗ ржирж┐рж╢рзНржЪрж┐ржд рж╣рзЯрзЗ
+рждрж╛рж░ржкрж░ Donation ржХрж░ржмрзЗржиред
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRANSPARENCY
+===================================================== -->
+
+<section class="transparency">
+
+<div class="container">
+
+<div class="transparency-box">
+
+
+<div
+class="section-head"
+style="text-align:left;margin-bottom:18px">
+
+<small data-i18n="transSmall">
+рж╕рзНржмржЪрзНржЫрждрж╛
+</small>
+
+<h2 data-i18n="transTitle">
+рж╕рзНржмржЪрзНржЫрждрж╛ ржЖржорж╛ржжрзЗрж░ ржХрж╛ржЫрзЗ ржЧрзБрж░рзБрждрзНржмржкрзВрж░рзНржг
+</h2>
+
+</div>
+
+
+<p data-i18n="transText">
+ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржХрзНрж╖рзЗрждрзНрж░рзЗ ржмрж┐рж╢рзНржмрж╛рж╕ ржУ рж╕рзНржмржЪрзНржЫрждрж╛ ржЕрждрзНржпржирзНржд ржЧрзБрж░рзБрждрзНржмржкрзВрж░рзНржгред
+ржЖржорж░рж╛ ржЖржорж╛ржжрзЗрж░ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржмрж┐рж╖рзЯрзЗ ржпржерж╛рж╕ржорзНржнржм ржжрж╛рзЯрж┐рждрзНржмрж╢рзАрж▓ ржУ рж╕рзНржмржЪрзНржЫ ржерж╛ржХрж╛рж░ ржЪрзЗрж╖рзНржЯрж╛ ржХрж░ржмред
+</p>
+
+
+<p
+style="margin-top:10px"
+data-i18n="transText2">
+
+рж╕ржорзНржнржм рж╣рж▓рзЗ ржЖржорж╛ржжрзЗрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░
+ржЫржмрж┐, ржнрж┐ржбрж┐ржУ, ржЖржкржбрзЗржЯ ржУ ржкрзНрж░рзЯрзЛржЬржирзАрзЯ рждржерзНржп
+ржЖржорж╛ржжрзЗрж░ ржХржорж┐ржЙржирж┐ржЯрж┐рж░ рж╕ржЩрзНржЧрзЗ рж╢рзЗрзЯрж╛рж░ ржХрж░рж╛ рж╣ржмрзЗред
+
+</p>
+
+
+<div
+class="note"
+data-i18n="transNote">
+
+ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржп рж╢рзБржзрзБ Donation рж╕ржВржЧрзНрж░рж╣ ржХрж░рж╛ ржирзЯред
+ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржп рж╣рж▓рзЛ ржорж╛ржирзБрж╖рзЗрж░ рж╕рж╣ржпрзЛржЧрж┐рждрж╛ржХрзЗ
+ржмрж╛рж╕рзНрждржм ржорж╛ржиржмрж┐ржХ ржХрж╛ржЬрзЗ ржкрж░рж┐ржгржд ржХрж░рж╛ред
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUOTE
+===================================================== -->
+
+<section class="quote">
+
+<div class="container">
+
+<div class="quote-box">
+
+
+<div class="quote-text">
+
+<span data-i18n="quote1">
+ржЖржорж░рж╛ рж╢рзБржзрзБ ржПржХржЯрж┐ ржмрзНржпржмрж╕рж╛ ржЧрзЬрзЗ рждрзБрж▓рждрзЗ ржЪрж╛ржЗ ржирж╛ред
+</span>
+
+<br>
+
+<span data-i18n="quote2">
+ржЖржорж░рж╛ ржПржоржи ржПржХржЯрж┐ ржмрзНржпржмрж╕рж╛ ржЧрзЬрзЗ рждрзБрж▓рждрзЗ ржЪрж╛ржЗ,
+ржпрж╛рж░ ржорж╛ржзрзНржпржорзЗ ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ ржпрж╛рзЯред
+</span>
+
+</div>
+
+
+<div class="quote-sub">
+RSP тАФ Business with Humanity. ЁЯдЭтЭдя╕П
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOCIAL
+===================================================== -->
+
+<section class="social-section">
+
+<div class="container">
+
+
+<div
+class="social-title"
+data-i18n="follow">
+
+RSP-ржХрзЗ ржЕржирзБрж╕рж░ржг ржХрж░рзБржи
+
+</div>
+
+
+<div class="social-icons">
+
+
+<a
+href="http://t.me/RspHelp"
+target="_blank"
+class="social-icon">
+тЬИ
+</a>
+
+
+<a
+href="https://facebook.com/RspHelp"
+class="social-icon">
+f
+</a>
+
+
+<a
+href="#"
+class="social-icon">
+тЧО
+</a>
+
+
+<a
+href="#"
+class="social-icon">
+тЦ╢
+</a>
+
+
+<a
+href="https://wa.me/+8801982887835"
+target="_blank"
+class="social-icon">
+тШО
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container footer">
+
+
+<a
+href="index.html"
+class="footer-brand">
+
+<img
+src="../assets/logo.png"
+alt="RSP">
+
+<div>
+
+<strong>
+Reseller Store Plus
+</strong>
+
+<span>
+@RspHelp
+</span>
+
+</div>
+
+</a>
+
+
+<p>
+┬й 2025-26 Reseller Store Plus.
+All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   LANGUAGE DATA
+===================================================== */
+
+const translations={
+
+bn:{
+
+home:"рж╣рзЛржо",
+marketplace:"ржорж╛рж░рзНржХрзЗржЯржкрзНрж▓рзЗрж╕",
+about:"ржЖржорж╛ржжрзЗрж░ рж╕ржорзНржкрж░рзНржХрзЗ",
+humanity:"RSP Humanity",
+contact:"ржпрзЛржЧрж╛ржпрзЛржЧ",
+
+badge:"RSP-ржПрж░ ржПржХржЯрж┐ ржорж╛ржиржмрж┐ржХ ржЙржжрзНржпрзЛржЧ",
+
+heroSubtitle:
+"ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛрж░ ржПржХржЯрж┐ ржЫрзЛржЯрзНржЯ ржЙржжрзНржпрзЛржЧ",
+
+heroDescription:
+"ржЖржкржирж┐ рж╕рж░рж╛рж╕рж░рж┐ Donation ржХрж░рждрзЗ ржкрж╛рж░рзЗржи ржЕржержмрж╛ Reseller Store Plus ржерзЗржХрзЗ ржкржгрзНржп ржХрж┐ржирзЗржУ RSP Humanity-ржПрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржоржХрзЗ Support ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред",
+
+donateButton:"Donate Now",
+
+supportButton:"ржкржгрзНржп ржХрж┐ржирзЗ Support ржХрж░рзБржи",
+
+intro1:
+"ржЖржорж╛ржжрзЗрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржирждрзБржи ржирж╛ржо RSP Humanityред тЭдя╕П",
+
+intro2:
+"RSP Humanity рж╣рж▓рзЛ Reseller Store Plus (RSP)-ржПрж░ ржПржХржЯрж┐ ржорж╛ржиржмрж┐ржХ рж╢рж╛ржЦрж╛, ржпрж╛рж░ ржорзВрж▓ рж▓ржХрзНрж╖рзНржп ржмрзНржпржмрж╕рж╛рж░ ржкрж╛рж╢рж╛ржкрж╛рж╢рж┐ ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ ржПржмржВ рж╕ржорж╛ржЬрзЗрж░ ржЬржирзНржп ржЗрждрж┐ржмрж╛ржЪржХ ржХрж┐ржЫрзБ ржХрж░рж╛ред",
+
+intro3:
+"ржЖржорж░рж╛ ржмрж┐рж╢рзНржмрж╛рж╕ ржХрж░рж┐, ржПржХржЯрж┐ ржмрзНржпржмрж╕рж╛ рж╢рзБржзрзБ рж▓рж╛ржнрзЗрж░ ржЬржирзНржп ржирзЯред ржмрзНржпржмрж╕рж╛рж░ ржорж╛ржзрзНржпржорзЗржУ ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ рж╕ржорзНржнржмред",
+
+profileDescription:
+"Reseller Store Plus-ржПрж░ ржПржХржЯрж┐ ржорж╛ржиржмрж┐ржХ рж╢рж╛ржЦрж╛ред ржмрзНржпржмрж╕рж╛рж░ ржкрж╛рж╢рж╛ржкрж╛рж╢рж┐ ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛржЗ ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржпред",
+
+profileFollow:
+"RSP Humanity-ржПрж░ рж╕ржЩрзНржЧрзЗ ржпрзБржХрзНржд ржерж╛ржХрзБржи тЭдя╕П",
+
+missionSmall:"ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржп",
+
+missionTitle:"ржЖржорж░рж╛ ржХрзА ржХрж░рждрзЗ ржЪрж╛ржЗ",
+
+missionDesc:
+"ржЖржорж╛ржжрзЗрж░ рж╕рж╛ржорж░рзНржерзНржп ржУ рж╕рзБржпрзЛржЧ ржЕржирзБржпрж╛рзЯрзА ржзрзАрж░рзЗ ржзрзАрж░рзЗ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржо ржкрж░рж┐ржЪрж╛рж▓ржирж╛ ржХрж░рж╛ ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржпред",
+
+foodTitle:"ржЦрж╛ржмрж╛рж░ рж╕рж╣рж╛рзЯрждрж╛",
+
+foodText:
+"ржХрзНрж╖рзБржзрж╛рж░рзНржд, ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░ ржЬржирзНржп ржЦрж╛ржмрж╛рж░рзЗрж░ ржмрзНржпржмрж╕рзНржерж╛ ржХрж░рждрзЗ рж╕рж╛рж╣рж╛ржпрзНржп ржХрж░рж╛ред",
+
+humanTitle:"ржорж╛ржиржмрж┐ржХ рж╕рж╣рж╛рзЯрждрж╛",
+
+humanText:
+"ржкрзНрж░рзЯрзЛржЬржирзЗрж░ рж╕ржорзЯрзЗ ржЕрж╕рж╣рж╛рзЯ ржУ рж╕рзБржмрж┐ржзрж╛ржмржЮрзНржЪрж┐ржд ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛред",
+
+communityTitle:"ржХржорж┐ржЙржирж┐ржЯрж┐ рж╕рж╛ржкрзЛрж░рзНржЯ",
+
+communityText:
+"ржорж╛ржирзБрж╖ ржУ ржЖржорж╛ржжрзЗрж░ ржХржорж┐ржЙржирж┐ржЯрж┐рж░ ржЬржирзНржп ржЫрзЛржЯ ржХрж┐ржирзНрждрзБ ржЕрж░рзНржержмрж╣ ржорж╛ржиржмрж┐ржХ ржЙржжрзНржпрзЛржЧ ржирзЗржУрзЯрж╛ред",
+
+shopTitle:
+"рж╕рж░рж╛рж╕рж░рж┐ Donation ржирж╛ ржХрж░рзЗржУ рж╕рж╛рж╣рж╛ржпрзНржп ржХрж░рзБржи",
+
+shopText1:
+"RSP Humanity-ржХрзЗ рж╕рж╛рж╣рж╛ржпрзНржп ржХрж░рждрзЗ ржЖржкржирж╛ржХрзЗ ржЕржмрж╢рзНржпржЗ рж╕рж░рж╛рж╕рж░рж┐ Donation ржХрж░рждрзЗ рж╣ржмрзЗтАФржПржоржи ржирзЯред",
+
+shopText2:
+"ржЖржкржирж╛рж░ ржпржжрж┐ ржХрзЛржирзЛ ржкржгрзНржп ржкрзНрж░рзЯрзЛржЬржи рж╣рзЯ, рждрж╛рж╣рж▓рзЗ Reseller Store Plus ржерзЗржХрзЗ ржкржгрзНржпржЯрж┐ ржХрж┐ржирждрзЗ ржкрж╛рж░рзЗржиред ржЖржкржирж╛рж░ ржХрзЗржирж╛ржХрж╛ржЯрж╛ RSP Humanity-ржПрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржо ржЪрж╛рж▓рж┐рзЯрзЗ ржпрзЗрждрзЗ ржЖржорж╛ржжрзЗрж░ рж╕рж╣ржпрзЛржЧрж┐рждрж╛ ржХрж░рждрзЗ ржкрж╛рж░рзЗред",
+
+flow1:"ржЖржкржирж┐ ржкржгрзНржп ржХрж┐ржирж▓рзЗржи",
+
+flow4:"ржПржХржЬржирзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ тЭдя╕П",
+
+balanceSmall:"DONATION TRANSPARENCY",
+
+balanceTitle:"ржмрж░рзНрждржорж╛ржи рж╣рж┐рж╕рж╛ржм",
+
+balanceDesc:
+"RSP Humanity-ржПрж░ ржмрж░рзНрждржорж╛ржи рждрж╣ржмрж┐рж▓рзЗрж░ ржПржХржЯрж┐ рж╕ржВржХрзНрж╖рж┐ржкрзНржд рж╣рж┐рж╕рж╛ржмред",
+
+currentBalance:"CURRENT BALANCE",
+
+balanceAvailable:"ржмрж░рзНрждржорж╛ржирзЗ рж╕ржВрж░ржХрзНрж╖рж┐ржд",
+
+totalIncome:"ржорзЛржЯ ржЖрзЯ",
+
+totalExpense:"ржорзЛржЯ ржмрзНржпрзЯ",
+
+balanceNote:
+"ЁЯУЭ ржПржЗ рж╣рж┐рж╕рж╛ржм ржирж┐рзЯржорж┐рждржнрж╛ржмрзЗ ржЖржкржбрзЗржЯ ржХрж░рж╛ рж╣рзЯред рж╕рж╛ржзрж╛рж░ржгржд ржкрзНрж░рждрж┐ рзм ржорж╛рж╕ ржмрж╛ рзз ржмржЫрж░рзЗ ржПржХржмрж╛рж░ ржмрж░рзНрждржорж╛ржи Balance, ржорзЛржЯ ржЖрзЯ ржУ ржорзЛржЯ ржмрзНржпрзЯрзЗрж░ рж╣рж┐рж╕рж╛ржм ржЖржкржбрзЗржЯ ржХрж░рж╛ рж╣ржмрзЗред",
+
+donationSmall:"DIRECT DONATION",
+
+donationTitle:
+"рж╕рж░рж╛рж╕рж░рж┐ Donation ржХрж░рждрзЗ ржЪрж╛ржи?",
+
+donationDesc:
+"ржЖржкржирж┐ ржЪрж╛ржЗрж▓рзЗ рж╕рж░рж╛рж╕рж░рж┐ RSP Humanity-ржХрзЗ Donation ржХрж░рзЗржУ ржЖржорж╛ржжрзЗрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗ рж╕рж╣ржпрзЛржЧрж┐рждрж╛ ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред",
+
+usdtText:
+"Binance-ржПрж░ ржорж╛ржзрзНржпржорзЗ USDT-рждрзЗ RSP Humanity-ржХрзЗ Donation ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред",
+
+bdPaymentTitle:
+"ржмрж┐ржХрж╛рж╢ / ржиржЧржж",
+
+bdPaymentText:
+"ржмрж╛ржВрж▓рж╛ржжрзЗрж╢ ржерзЗржХрзЗ Donation ржХрж░рждрзЗ ржмрж┐ржХрж╛рж╢ ржЕржержмрж╛ ржиржЧржж ржмрзНржпржмрж╣рж╛рж░ ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред",
+
+instructionTitle:
+"Donation ржХрж░рж╛рж░ ржЖржЧрзЗ ржЧрзБрж░рзБрждрзНржмржкрзВрж░рзНржг рждржерзНржп",
+
+instruction1:
+"USDT-рждрзЗ Donation ржХрж░рж╛рж░ ржЪрзЗрж╖рзНржЯрж╛ ржХрж░рзБржиред рж╕ржорзНржнржм рж╣рж▓рзЗ Binance-ржПрж░ ржорж╛ржзрзНржпржорзЗ USDT ржкрж╛ржарж╛ржирзЛ ржЖржорж╛ржжрзЗрж░ ржЬржирзНржп рж╕рж╣ржЬред",
+
+instruction2:
+"ржЖржкржирж┐ ржмрж╛ржВрж▓рж╛ржжрзЗрж╢ ржерзЗржХрзЗ рж╣рж▓рзЗ ржмрж┐ржХрж╛рж╢/ржиржЧржжрзЗрж░ ржорж╛ржзрзНржпржорзЗржУ Donation ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред",
+
+instruction3:
+"Binance-ржПрж░ ржорж╛ржзрзНржпржорзЗ USDT Donation ржХрж░рж▓рзЗ ржЖржкржирж┐ ржЖржкржирж╛рж░ ржЗржЪрзНржЫрж╛ржорждрзЛ amount ржжрж╛ржи ржХрж░рждрзЗ ржкрж╛рж░рзЗржиред ржЪрж╛ржЗрж▓рзЗ Donation ржХрж░рж╛рж░ ржЖржЧрзЗ ржЖржорж╛ржжрзЗрж░ рж╕ржЩрзНржЧрзЗ ржХржерж╛ржУ ржмрж▓рждрзЗ ржкрж╛рж░рзЗржиред",
+
+warning:
+"тЪая╕П ржмрж┐ржХрж╛рж╢/ржиржЧржжрзЗ ржмрзЬ ржЕржЩрзНржХрзЗрж░ Donation ржХрж░рж╛рж░ ржЖржЧрзЗ ржЕржмрж╢рзНржпржЗ ржЖржорж╛ржжрзЗрж░ рж╕ржЩрзНржЧрзЗ ржпрзЛржЧрж╛ржпрзЛржЧ ржХрж░рзЗ ржирж┐рж╢рзНржЪрж┐ржд рж╣рзЯрзЗ рждрж╛рж░ржкрж░ Donation ржХрж░ржмрзЗржиред",
+
+transSmall:"рж╕рзНржмржЪрзНржЫрждрж╛",
+
+transTitle:
+"рж╕рзНржмржЪрзНржЫрждрж╛ ржЖржорж╛ржжрзЗрж░ ржХрж╛ржЫрзЗ ржЧрзБрж░рзБрждрзНржмржкрзВрж░рзНржг",
+
+transText:
+"ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржХрзНрж╖рзЗрждрзНрж░рзЗ ржмрж┐рж╢рзНржмрж╛рж╕ ржУ рж╕рзНржмржЪрзНржЫрждрж╛ ржЕрждрзНржпржирзНржд ржЧрзБрж░рзБрждрзНржмржкрзВрж░рзНржгред ржЖржорж░рж╛ ржЖржорж╛ржжрзЗрж░ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржмрж┐рж╖рзЯрзЗ ржпржерж╛рж╕ржорзНржнржм ржжрж╛рзЯрж┐рждрзНржмрж╢рзАрж▓ ржУ рж╕рзНржмржЪрзНржЫ ржерж╛ржХрж╛рж░ ржЪрзЗрж╖рзНржЯрж╛ ржХрж░ржмред",
+
+transText2:
+"рж╕ржорзНржнржм рж╣рж▓рзЗ ржЖржорж╛ржжрзЗрж░ ржорж╛ржиржмрж┐ржХ ржХрж╛рж░рзНржпржХрзНрж░ржорзЗрж░ ржЫржмрж┐, ржнрж┐ржбрж┐ржУ, ржЖржкржбрзЗржЯ ржУ ржкрзНрж░рзЯрзЛржЬржирзАрзЯ рждржерзНржп ржЖржорж╛ржжрзЗрж░ ржХржорж┐ржЙржирж┐ржЯрж┐рж░ рж╕ржЩрзНржЧрзЗ рж╢рзЗрзЯрж╛рж░ ржХрж░рж╛ рж╣ржмрзЗред",
+
+transNote:
+"ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржп рж╢рзБржзрзБ Donation рж╕ржВржЧрзНрж░рж╣ ржХрж░рж╛ ржирзЯред ржЖржорж╛ржжрзЗрж░ рж▓ржХрзНрж╖рзНржп рж╣рж▓рзЛ ржорж╛ржирзБрж╖рзЗрж░ рж╕рж╣ржпрзЛржЧрж┐рждрж╛ржХрзЗ ржмрж╛рж╕рзНрждржм ржорж╛ржиржмрж┐ржХ ржХрж╛ржЬрзЗ ржкрж░рж┐ржгржд ржХрж░рж╛ред",
+
+quote1:
+"ржЖржорж░рж╛ рж╢рзБржзрзБ ржПржХржЯрж┐ ржмрзНржпржмрж╕рж╛ ржЧрзЬрзЗ рждрзБрж▓рждрзЗ ржЪрж╛ржЗ ржирж╛ред",
+
+quote2:
+"ржЖржорж░рж╛ ржПржоржи ржПржХржЯрж┐ ржмрзНржпржмрж╕рж╛ ржЧрзЬрзЗ рждрзБрж▓рждрзЗ ржЪрж╛ржЗ, ржпрж╛рж░ ржорж╛ржзрзНржпржорзЗ ржорж╛ржирзБрж╖рзЗрж░ ржкрж╛рж╢рзЗ ржжрж╛ржБрзЬрж╛ржирзЛ ржпрж╛рзЯред",
+
+follow:"RSP-ржХрзЗ ржЕржирзБрж╕рж░ржг ржХрж░рзБржи"
+
+},
+
+
+en:{
+
+home:"Home",
+marketplace:"Marketplace",
+about:"About Us",
+humanity:"RSP Humanity",
+contact:"Contact",
+
+badge:"A Humanitarian Initiative of RSP",
+
+heroSubtitle:
+"A small initiative to stand beside people",
+
+heroDescription:
+"You can donate directly or support RSP Humanity by purchasing products from Reseller Store Plus.",
+
+donateButton:"Donate Now",
+
+supportButton:"Support Through Shopping",
+
+intro1:
+"From today, the new name of our humanitarian activities is RSP Humanity. тЭдя╕П",
+
+intro2:
+"RSP Humanity is the humanitarian branch of Reseller Store Plus (RSP), created to stand beside helpless and underprivileged people while doing something positive for society alongside our business.",
+
+intro3:
+"We believe business is not only about profit. Business can also be a way to help people.",
+
+profileDescription:
+"A humanitarian branch of Reseller Store Plus. Our goal is to stand beside helpless and underprivileged people while doing business with humanity.",
+
+profileFollow:
+"Stay connected with RSP Humanity тЭдя╕П",
+
+missionSmall:"OUR MISSION",
+
+missionTitle:"What We Want To Do",
+
+missionDesc:
+"Our goal is to gradually conduct meaningful humanitarian activities according to our ability and resources.",
+
+foodTitle:"Food Support",
+
+foodText:
+"Help provide food for hungry, helpless and disadvantaged people.",
+
+humanTitle:"Humanitarian Support",
+
+humanText:
+"Stand beside helpless and disadvantaged people when they need support.",
+
+communityTitle:"Community Support",
+
+communityText:
+"Take small but meaningful humanitarian initiatives for people and our community.",
+
+shopTitle:
+"You Can Help Without Donating Directly",
+
+shopText1:
+"You do not have to donate directly to support RSP Humanity.",
+
+shopText2:
+"If you need a product, buy it from Reseller Store Plus. Your purchase can help us continue humanitarian activities through RSP Humanity.",
+
+flow1:"You Buy",
+
+flow4:"Help Someone тЭдя╕П",
+
+balanceSmall:"DONATION TRANSPARENCY",
+
+balanceTitle:"Current Financial Summary",
+
+balanceDesc:
+"A brief overview of the current RSP Humanity fund.",
+
+currentBalance:"CURRENT BALANCE",
+
+balanceAvailable:"Currently Available",
+
+totalIncome:"Total Income",
+
+totalExpense:"Total Expenses",
+
+balanceNote:
+"ЁЯУЭ This information is updated periodically. Generally, the current balance, total income and total expenses will be updated every 6 months or once a year.",
+
+donationSmall:"DIRECT DONATION",
+
+donationTitle:
+"Want To Donate Directly?",
+
+donationDesc:
+"You can directly donate to RSP Humanity and support our humanitarian activities.",
+
+usdtText:
+"Donate to RSP Humanity in USDT through Binance.",
+
+bdPaymentTitle:
+"bKash / Nagad",
+
+bdPaymentText:
+"If you are in Bangladesh, you can donate through bKash or Nagad.",
+
+instructionTitle:
+"Important Donation Information",
+
+instruction1:
+"Please try to donate in USDT. If possible, sending USDT through Binance is easier for us.",
+
+instruction2:
+"If you are from Bangladesh, you can also donate through bKash/Nagad.",
+
+instruction3:
+"When donating USDT through Binance, you can donate any amount you wish. You may also contact us before donating if you prefer.",
+
+warning:
+"тЪая╕П Before making a large donation through bKash/Nagad, please contact us and confirm the details first.",
+
+transSmall:"TRANSPARENCY",
+
+transTitle:
+"We Value Transparency",
+
+transText:
+"Trust and transparency are very important in humanitarian activities. We will try to remain responsible and transparent about our activities.",
+
+transText2:
+"Whenever possible, photos, videos, updates and relevant information about our humanitarian activities may be shared with our community.",
+
+transNote:
+"Our goal is not simply to collect donations. Our goal is to turn people's support into real humanitarian action.",
+
+quote1:
+"We are not here only to build a business.",
+
+quote2:
+"We are here to build a business that can help people.",
+
+follow:"FOLLOW RSP"
+
+},
+
+
+ur:{
+
+home:"█Б┘И┘Е",
+marketplace:"┘Е╪з╪▒┌й█М┘╣ ┘╛┘Д█М╪│",
+about:"█Б┘Е╪з╪▒█Т ╪и╪з╪▒█Т ┘Е█М┌║",
+humanity:"RSP Humanity",
+contact:"╪▒╪з╪и╪╖█Б",
+
+badge:"RSP ┌й█М ╪з█М┌й ╪з┘Ж╪│╪з┘Ж█М ╪о╪п┘Е╪к",
+
+heroSubtitle:
+"┘Д┘И┌п┘И┌║ ┌й╪з ╪│╪з╪к┌╛ ╪п█М┘Ж█Т ┌й█М ╪з█М┌й ┌Ж┌╛┘И┘╣█М ╪│█М ┌й┘И╪┤╪┤",
+
+heroDescription:
+"╪в┘╛ ╪и╪▒╪з█Б ╪▒╪з╪│╪к Donation ┌й╪▒ ╪│┌й╪к█Т █Б█М┌║ █М╪з Reseller Store Plus ╪│█Т ┘Е╪╡┘Ж┘И╪╣╪з╪к ╪о╪▒█М╪п ┌й╪▒ RSP Humanity ┌й█М ╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┌й┘И Support ┌й╪▒ ╪│┌й╪к█Т █Б█М┌║█Ф",
+
+donateButton:"Donate Now",
+
+supportButton:"╪о╪▒█М╪п╪з╪▒█М ┌й█Т ╪░╪▒█М╪╣█Т Support ┌й╪▒█М┌║",
+
+intro1:
+"╪в╪м ╪│█Т █Б┘Е╪з╪▒█М ╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┌й╪з ┘Ж█М╪з ┘Ж╪з┘Е RSP Humanity █Б█Т█Ф тЭдя╕П",
+
+intro2:
+"RSP Humanity╪М Reseller Store Plus (RSP) ┌й█М ╪з█М┌й ╪з┘Ж╪│╪з┘Ж█М ╪┤╪з╪о █Б█Т╪М ╪м╪│ ┌й╪з ┘Е┘В╪╡╪п ┌й╪з╪▒┘И╪и╪з╪▒ ┌й█Т ╪│╪з╪к┌╛ ╪│╪з╪к┌╛ ╪и█Т ╪│█Б╪з╪▒╪з ╪з┘И╪▒ ┘Е╪н╪▒┘И┘Е ┘Д┘И┌п┘И┌║ ┌й╪з ╪│╪з╪к┌╛ ╪п█М┘Ж╪з ╪з┘И╪▒ ┘Е╪╣╪з╪┤╪▒█Т ┌й█Т ┘Д█М█Т ┘Е╪л╪и╪к ┌й╪з┘Е ┌й╪▒┘Ж╪з █Б█Т█Ф",
+
+intro3:
+"█Б┘Е ╪│┘Е╪м┌╛╪к█Т █Б█М┌║ ┌й█Б ┌й╪з╪▒┘И╪и╪з╪▒ ╪╡╪▒┘Б ┘Е┘Ж╪з┘Б╪╣ ┌й█Т ┘Д█М█Т ┘Ж█Б█М┌║█Ф ┌й╪з╪▒┘И╪и╪з╪▒ ┌й█Т ╪░╪▒█М╪╣█Т ╪и┌╛█М ┘Д┘И┌п┘И┌║ ┌й█М ┘Е╪п╪п ┌й█М ╪м╪з ╪│┌й╪к█М █Б█Т█Ф",
+
+profileDescription:
+"Reseller Store Plus ┌й█М ╪з█М┌й ╪з┘Ж╪│╪з┘Ж█М ╪┤╪з╪о█Ф ┌й╪з╪▒┘И╪и╪з╪▒ ┌й█Т ╪│╪з╪к┌╛ ╪и█Т ╪│█Б╪з╪▒╪з ╪з┘И╪▒ ┘Е╪н╪▒┘И┘Е ┘Д┘И┌п┘И┌║ ┌й╪з ╪│╪з╪к┌╛ ╪п█М┘Ж╪з █Б┘Е╪з╪▒╪з ┘Е┘В╪╡╪п █Б█Т█Ф",
+
+profileFollow:
+"RSP Humanity ┌й█Т ╪│╪з╪к┌╛ ╪м┌С█Т ╪▒█Б█М┌║ тЭдя╕П",
+
+missionSmall:"█Б┘Е╪з╪▒╪з ┘Е┘В╪╡╪п",
+
+missionTitle:"█Б┘Е ┌й█М╪з ┌й╪▒┘Ж╪з ┌Ж╪з█Б╪к█Т █Б█М┌║",
+
+missionDesc:
+"╪з┘╛┘Ж█М ╪з╪│╪к╪╖╪з╪╣╪к ╪з┘И╪▒ ┘И╪│╪з╪ж┘Д ┌й█Т ┘Е╪╖╪з╪и┘В ╪и╪з┘Е╪╣┘Ж█М ╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М╪з┌║ ╪з┘Ж╪м╪з┘Е ╪п█М┘Ж╪з █Б┘Е╪з╪▒╪з ┘Е┘В╪╡╪п █Б█Т█Ф",
+
+foodTitle:"┌й┌╛╪з┘Ж█Т ┌й█М ┘Е╪п╪п",
+
+foodText:
+"╪и┌╛┘И┌й ╪│█Т ┘Е╪к╪з╪л╪▒█Б ╪з┘И╪▒ ╪╢╪▒┘И╪▒╪к ┘Е┘Ж╪п ┘Д┘И┌п┘И┌║ ┌й█Т ┘Д█М█Т ┌й┌╛╪з┘Ж█Т ┌й╪з ╪з┘Ж╪к╪╕╪з┘Е ┌й╪▒┘Ж█Т ┘Е█М┌║ ┘Е╪п╪п ┌й╪▒┘Ж╪з█Ф",
+
+humanTitle:"╪з┘Ж╪│╪з┘Ж█М ┘Е╪п╪п",
+
+humanText:
+"╪╢╪▒┘И╪▒╪к ┌й█Т ┘И┘В╪к ╪и█Т ╪│█Б╪з╪▒╪з ╪з┘И╪▒ ┘Е╪н╪▒┘И┘Е ┘Д┘И┌п┘И┌║ ┌й╪з ╪│╪з╪к┌╛ ╪п█М┘Ж╪з█Ф",
+
+communityTitle:"┌й┘Е█М┘И┘Ж┘╣█М ╪│┘╛┘И╪▒┘╣",
+
+communityText:
+"┘Д┘И┌п┘И┌║ ╪з┘И╪▒ ╪з┘╛┘Ж█М ┌й┘Е█М┘И┘Ж┘╣█М ┌й█Т ┘Д█М█Т ┌Ж┌╛┘И┘╣█Т ┘Е┌п╪▒ ╪и╪з┘Е╪╣┘Ж█М ╪з┘Ж╪│╪з┘Ж█М ╪з┘В╪п╪з┘Е╪з╪к ┌й╪▒┘Ж╪з█Ф",
+
+shopTitle:
+"╪и╪▒╪з█Б ╪▒╪з╪│╪к Donation ┌й█Т ╪и╪║█М╪▒ ╪и┌╛█М ┘Е╪п╪п ┌й╪▒█М┌║",
+
+shopText1:
+"RSP Humanity ┌й█М ┘Е╪п╪п ┌й█Т ┘Д█М█Т ╪и╪▒╪з█Б ╪▒╪з╪│╪к Donation ┌й╪▒┘Ж╪з ╪╢╪▒┘И╪▒█М ┘Ж█Б█М┌║█Ф",
+
+shopText2:
+"╪з┌п╪▒ ╪в┘╛ ┌й┘И ┌й╪│█М ┌Ж█М╪▓ ┌й█М ╪╢╪▒┘И╪▒╪к █Б█Т ╪к┘И ╪з╪│█Т Reseller Store Plus ╪│█Т ╪о╪▒█М╪п█М┌║█Ф ╪в┘╛ ┌й█М ╪о╪▒█М╪п╪з╪▒█М RSP Humanity ┌й█М ╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┌й┘И ╪м╪з╪▒█М ╪▒┌й┌╛┘Ж█Т ┘Е█М┌║ ┘Е╪п╪п ┌й╪▒ ╪│┌й╪к█М █Б█Т█Ф",
+
+flow1:"╪в┘╛ ╪о╪▒█М╪п█М┌║",
+
+flow4:"┌й╪│█М ┌й█М ┘Е╪п╪п тЭдя╕П",
+
+balanceSmall:"DONATION TRANSPARENCY",
+
+balanceTitle:"┘Е┘И╪м┘И╪п█Б ╪н╪│╪з╪и",
+
+balanceDesc:
+"RSP Humanity ┌й█Т ┘Е┘И╪м┘И╪п█Б ┘Б┘Ж┌И ┌й╪з ┘Е╪о╪к╪╡╪▒ ╪н╪│╪з╪и█Ф",
+
+currentBalance:"CURRENT BALANCE",
+
+balanceAvailable:"┘Б█М ╪з┘Д╪н╪з┘Д ┘Е┘И╪м┘И╪п",
+
+totalIncome:"┌й┘Д ╪в┘Е╪п┘Ж█М",
+
+totalExpense:"┌й┘Д ╪з╪о╪▒╪з╪м╪з╪к",
+
+balanceNote:
+"ЁЯУЭ █М█Б ╪н╪│╪з╪и ╪и╪з┘В╪з╪╣╪п┌п█М ╪│█Т ╪з┘╛ ┌И█М┘╣ ┌й█М╪з ╪м╪з╪к╪з █Б█Т█Ф ╪╣╪з┘Е ╪╖┘И╪▒ ┘╛╪▒ ┘Е┘И╪м┘И╪п█Б Balance╪М ┌й┘Д ╪в┘Е╪п┘Ж█М ╪з┘И╪▒ ┌й┘Д ╪з╪о╪▒╪з╪м╪з╪к █Б╪▒ 6 ┘Е╪з█Б █М╪з ╪│╪з┘Д ┘Е█М┌║ ╪з█М┌й ╪и╪з╪▒ ╪з┘╛ ┌И█М┘╣ ┌й█М█Т ╪м╪з╪ж█М┌║ ┌п█Т█Ф",
+
+donationSmall:"╪и╪▒╪з█Б ╪▒╪з╪│╪к Donation",
+
+donationTitle:
+"┌й█М╪з ╪в┘╛ ╪и╪▒╪з█Б ╪▒╪з╪│╪к Donation ┌й╪▒┘Ж╪з ┌Ж╪з█Б╪к█Т █Б█М┌║╪Я",
+
+donationDesc:
+"╪в┘╛ ╪и╪▒╪з█Б ╪▒╪з╪│╪к RSP Humanity ┌й┘И Donation ┌й╪▒ ┌й█Т █Б┘Е╪з╪▒█М ╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┘Е█М┌║ ┘Е╪п╪п ┌й╪▒ ╪│┌й╪к█Т █Б█М┌║█Ф",
+
+usdtText:
+"Binance ┌й█Т ╪░╪▒█М╪╣█Т USDT ┘Е█М┌║ RSP Humanity ┌й┘И Donation ┌й╪▒█М┌║█Ф",
+
+bdPaymentTitle:
+"bKash / Nagad",
+
+bdPaymentText:
+"╪з┌п╪▒ ╪в┘╛ ╪и┘Ж┌п┘Д█Б ╪п█М╪┤ ┘Е█М┌║ █Б█М┌║ ╪к┘И bKash █М╪з Nagad ┌й█Т ╪░╪▒█М╪╣█Т Donation ┌й╪▒ ╪│┌й╪к█Т █Б█М┌║█Ф",
+
+instructionTitle:
+"Donation ╪│█Т ┘╛█Б┘Д█Т ╪з█Б┘Е ┘Е╪╣┘Д┘И┘Е╪з╪к",
+
+instruction1:
+"╪и╪▒╪з█Б ┌й╪▒┘Е USDT ┘Е█М┌║ Donation ┌й╪▒┘Ж█Т ┌й█М ┌й┘И╪┤╪┤ ┌й╪▒█М┌║█Ф ╪з┌п╪▒ ┘Е┘Е┌й┘Ж █Б┘И ╪к┘И Binance ┌й█Т ╪░╪▒█М╪╣█Т USDT ╪и┌╛█М╪м┘Ж╪з █Б┘Е╪з╪▒█Т ┘Д█М█Т ╪в╪│╪з┘Ж █Б█Т█Ф",
+
+instruction2:
+"╪з┌п╪▒ ╪в┘╛ ╪и┘Ж┌п┘Д█Б ╪п█М╪┤ ╪│█Т █Б█М┌║ ╪к┘И bKash/Nagad ┌й█Т ╪░╪▒█М╪╣█Т ╪и┌╛█М Donation ┌й╪▒ ╪│┌й╪к█Т █Б█М┌║█Ф",
+
+instruction3:
+"Binance ┌й█Т ╪░╪▒█М╪╣█Т USDT Donation ┌й╪▒╪к█Т ┘И┘В╪к ╪в┘╛ ╪з┘╛┘Ж█М ┘Е╪▒╪╢█М ┌й█М ╪▒┘В┘Е ╪п█Т ╪│┌й╪к█Т █Б█М┌║█Ф ┌Ж╪з█Б█М┌║ ╪к┘И Donation ╪│█Т ┘╛█Б┘Д█Т █Б┘Е ╪│█Т ╪и╪з╪к ╪и┌╛█М ┌й╪▒ ╪│┌й╪к█Т █Б█М┌║█Ф",
+
+warning:
+"тЪая╕П bKash/Nagad ┌й█Т ╪░╪▒█М╪╣█Т ╪и┌С█М ╪▒┘В┘Е Donation ┌й╪▒┘Ж█Т ╪│█Т ┘╛█Б┘Д█Т ╪и╪▒╪з█Б ┌й╪▒┘Е █Б┘Е ╪│█Т ╪▒╪з╪и╪╖█Б ┌й╪▒ ┌й█Т ╪к┘Б╪╡█М┘Д╪з╪к ┌й█М ╪к╪╡╪п█М┘В ┌й╪▒█М┌║█Ф",
+
+transSmall:"╪┤┘Б╪з┘Б█М╪к",
+
+transTitle:
+"╪┤┘Б╪з┘Б█М╪к █Б┘Е╪з╪▒█Т ┘Д█М█Т ╪з█Б┘Е █Б█Т",
+
+transText:
+"╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┘Е█М┌║ ╪з╪╣╪к┘Е╪з╪п ╪з┘И╪▒ ╪┤┘Б╪з┘Б█М╪к ╪и█Б╪к ╪з█Б┘Е █Б█М┌║█Ф █Б┘Е ╪з┘╛┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┌й█Т ╪и╪з╪▒█Т ┘Е█М┌║ ╪░┘Е█Б ╪п╪з╪▒ ╪з┘И╪▒ ╪┤┘Б╪з┘Б ╪▒█Б┘Ж█Т ┌й█М ┌й┘И╪┤╪┤ ┌й╪▒█М┌║ ┌п█Т█Ф",
+
+transText2:
+"╪м╪и ┘Е┘Е┌й┘Ж █Б┘И╪М █Б┘Е╪з╪▒█М ╪з┘Ж╪│╪з┘Ж█М ╪│╪▒┌п╪▒┘Е█М┘И┌║ ┌й█М ╪к╪╡╪з┘И█М╪▒╪М ┘И█М┌И█М┘И╪▓ ╪з┘И╪▒ ╪з┘╛ ┌И█М┘╣╪│ ╪з┘╛┘Ж█М ┌й┘Е█М┘И┘Ж┘╣█М ┌й█Т ╪│╪з╪к┌╛ ╪┤█М╪ж╪▒ ┌й█М ╪м╪з╪ж█М┌║ ┌п█М█Ф",
+
+transNote:
+"█Б┘Е╪з╪▒╪з ┘Е┘В╪╡╪п ╪╡╪▒┘Б Donation ╪м┘Е╪╣ ┌й╪▒┘Ж╪з ┘Ж█Б█М┌║╪М ╪и┘Д┌й█Б ┘Д┘И┌п┘И┌║ ┌й█Т ╪к╪╣╪з┘И┘Ж ┌й┘И ╪н┘В█М┘В█М ╪з┘Ж╪│╪з┘Ж█М ╪о╪п┘Е╪к ┘Е█М┌║ ╪к╪и╪п█М┘Д ┌й╪▒┘Ж╪з █Б█Т█Ф",
+
+quote1:
+"█Б┘Е ╪╡╪▒┘Б ╪з█М┌й ┌й╪з╪▒┘И╪и╪з╪▒ ╪и┘Ж╪з┘Ж╪з ┘Ж█Б█М┌║ ┌Ж╪з█Б╪к█Т█Ф",
+
+quote2:
+"█Б┘Е ╪з█М╪│╪з ┌й╪з╪▒┘И╪и╪з╪▒ ╪и┘Ж╪з┘Ж╪з ┌Ж╪з█Б╪к█Т █Б█М┌║ ╪м╪│ ┌й█Т ╪░╪▒█М╪╣█Т ┘Д┘И┌п┘И┌║ ┌й█М ┘Е╪п╪п ┌й█М ╪м╪з ╪│┌й█Т█Ф",
+
+follow:"RSP ┌й┘И ┘Б╪з┘Д┘И ┌й╪▒█М┌║"
+
+}
+
+};
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+function setLanguage(lang){
+
+    const data=translations[lang];
+
+    document
+    .querySelectorAll("[data-i18n]")
+    .forEach(el=>{
+
+        const key=el.dataset.i18n;
+
+        if(data[key]){
+            el.textContent=data[key];
+        }
+
+    });
+
+    document.documentElement.lang=lang;
+
+    if(lang==="ur"){
+
+        document.body.classList.add("rtl");
+
+    }else{
+
+        document.body.classList.remove("rtl");
+
+    }
+
+    document
+    .querySelectorAll(".lang")
+    .forEach(btn=>{
+
+        btn.classList.toggle(
+            "active",
+            btn.dataset.lang===lang
+        );
+
+    });
+
+    localStorage.setItem(
+        "rsp_humanity_language",
+        lang
+    );
+}
+
+
+document
+.querySelectorAll(".lang")
+.forEach(btn=>{
+
+    btn.addEventListener(
+        "click",
+        ()=>{
+
+            setLanguage(
+                btn.dataset.lang
+            );
+
+        }
+    );
+
+});
+
+
+/* BANGLA DEFAULT */
+
+setLanguage(
+    localStorage.getItem(
+        "rsp_humanity_language"
+    ) || "bn"
+);
+
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+const themeBtn=
+document.getElementById("themeBtn");
+
+const themeIcon=
+document.getElementById("themeIcon");
+
+
+function setTheme(theme){
+
+    if(theme==="dark"){
+
+        document.body.classList.add("dark");
+
+        themeIcon.textContent="тШ╛";
+
+    }else{
+
+        document.body.classList.remove("dark");
+
+        themeIcon.textContent="тША";
+
+    }
+
+    localStorage.setItem(
+        "rsp_theme",
+        theme
+    );
+
+}
+
+
+themeBtn.addEventListener(
+    "click",
+    ()=>{
+
+        const dark=
+        document.body.classList.contains(
+            "dark"
+        );
+
+        setTheme(
+            dark
+            ? "light"
+            : "dark"
+        );
+
+    }
+);
+
+
+/* LIGHT DEFAULT */
+
+setTheme(
+    localStorage.getItem(
+        "rsp_theme"
+    ) || "light"
+);
+
+
+
+/* =====================================================
+   HERO LOGO LIGHTBOX
+===================================================== */
+
+const heroLogo=
+document.getElementById(
+    "heroLogo"
+);
+
+const logoLightbox=
+document.getElementById(
+    "logoLightbox"
+);
+
+const logoClose=
+document.getElementById(
+    "logoClose"
+);
+
+
+heroLogo.addEventListener(
+    "click",
+    ()=>{
+
+        logoLightbox.classList.add(
+            "show"
+        );
+
+    }
+);
+
+
+logoClose.addEventListener(
+    "click",
+    ()=>{
+
+        logoLightbox.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+logoLightbox.addEventListener(
+    "click",
+    (event)=>{
+
+        if(
+            event.target ===
+            logoLightbox
+        ){
+
+            logoLightbox.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    (event)=>{
+
+        if(
+            event.key === "Escape"
+        ){
+
+            logoLightbox.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   BINANCE ID COPY
+===================================================== */
+
+const binanceCopy=
+document.getElementById(
+    "binanceCopy"
+);
+
+
+binanceCopy.addEventListener(
+    "click",
+    async function(){
+
+        const id=
+        document
+        .getElementById(
+            "binanceId"
+        )
+        .textContent
+        .trim();
+
+
+        try{
+
+            await navigator
+            .clipboard
+            .writeText(id);
+
+
+            this.textContent=
+            "Copied!";
+
+            this.classList.add(
+                "copied"
+            );
+
+
+            setTimeout(()=>{
+
+                this.textContent=
+                "Copy";
+
+                this.classList.remove(
+                    "copied"
+                );
+
+            },1500);
+
+
+        }catch(error){
+
+            alert(
+                "Copy failed"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   OTHER COPY BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(".copy")
+.forEach(btn=>{
+
+    btn.addEventListener(
+        "click",
+        async()=>{
+
+            const value=
+            btn.dataset.copy;
+
+
+            try{
+
+                await navigator
+                .clipboard
+                .writeText(value);
+
+
+                const old=
+                btn.textContent;
+
+
+                btn.textContent=
+                "Copied!";
+
+
+                btn.classList.add(
+                    "copied"
+                );
+
+
+                setTimeout(()=>{
+
+                    btn.textContent=
+                    old;
+
+                    btn.classList.remove(
+                        "copied"
+                    );
+
+                },1500);
+
+
+            }catch(error){
+
+                alert(
+                    "Copy failed"
+                );
+
+            }
+
+        }
+    );
+
+});
+
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const mobileBtn=
+document.getElementById(
+    "mobileBtn"
+);
+
+const menu=
+document.getElementById(
+    "menu"
+);
+
+
+mobileBtn.addEventListener(
+    "click",
+    ()=>{
+
+        menu.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+
+document
+.querySelectorAll(".menu a")
+.forEach(link=>{
+
+    link.addEventListener(
+        "click",
+        ()=>{
+
+            menu.classList.remove(
+                "show"
+            );
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+
+</html>
