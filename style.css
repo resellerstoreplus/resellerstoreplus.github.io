@@ -213,9 +213,14 @@ body.light .header {
     cursor: pointer;
 }
 
+/*===== category link =====*/
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
 /* ================= HERO ================= */
-
 .hero {
     min-height: 100vh;
 
